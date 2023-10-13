@@ -6,41 +6,39 @@ import {
 } from './LoginForm.styled';
 
 import React from 'react';
-// import { useForm } from 'react-hook-form';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-// import { loginThunk } from 'redux/auth/operations';
-// import { selectIsLoggedIn } from 'redux/auth/selectors';
-// import { StyledDesc, StyledTitle } from 'styles/App.Styled';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { loginThunk } from '../../../redux/registration/operation';
+import { selectIsLogin } from '../../../redux/registration/selectors';
+import { toast } from 'react-toastify';
 import { StyledLink } from './LoginForm.styled';
 import Button from '../home/shared/Button';
 import { MdEmail, MdHttps } from 'react-icons/md';
 import logoImg from '../../icons/logo.svg';
 
 const LoginForm = () => {
-  //   const isLoggedIn = useSelector(selectIsLoggedIn);
-  //   const { handleSubmit, register } = useForm();
-  //   const dispatch = useDispatch();
-  //   const navigate = useNavigate();
-  //   const location = useLocation();
-  //   const submit = data => {
-  //     dispatch(loginThunk(data))
-  //       .unwrap()
-  //       .then(res => {
-  //         alert(`Welcome, ${res.user.name}!`);
+  const isLoggedIn = useSelector(selectIsLogin);
+  const { handleSubmit, register } = useForm();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const submit = data => {
+    dispatch(loginThunk(data))
+      .unwrap()
+      .then(res => {
+        toast.success(`Welcome, ${res.user.name}!`);
 
-  //         navigate(location.state?.from ?? '/');
-  //       })
-  //       .catch(() => alert('Data is not valid! Try again!'));
-  //   };
-  //   if (isLoggedIn) {
-  //     return <Navigate to="/contacts" />;
-  //   }
+        navigate(location.state?.from ?? '/');
+      })
+      .catch(() => toast.warn('Data is not valid! Try again!'));
+  };
+  if (isLoggedIn) {
+    return <Navigate to="/contacts" />;
+  }
   return (
     <StyledLoginSection>
-      <StyledForm>
-        {/* <StyledForm onSubmit={handleSubmit(submit)}></StyledForm> */}
-
+      <StyledForm onSubmit={handleSubmit(submit)}>
         <StyledTitle>
           <StyledLogo src={logoImg} alt="logoImg" />
           <span className="logoText">Money Guard</span>
@@ -53,7 +51,7 @@ const LoginForm = () => {
             placeholder="Email"
             minLength={3}
             required
-            // {...register('email')}
+            {...register('email')}
           />
         </label>
 
@@ -63,11 +61,11 @@ const LoginForm = () => {
             type="password"
             name="password"
             placeholder="Enter password"
-            title="Enter 5-12 symbols"
-            minLength={5}
+            title="Enter 6-12 symbols"
+            minLength={6}
             maxLength={12}
             required
-            // {...register('password')}
+            {...register('password')}
           />
         </label>
 
