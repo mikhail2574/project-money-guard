@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginPage from 'ui/pages/LoginPage/LoginPage';
 import { Register } from 'ui/pages/RegistrationPage/RegistrationPage';
 
 export const App = () => {
@@ -14,7 +13,6 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <LoginPage />
       <Register />
     </div>
   );

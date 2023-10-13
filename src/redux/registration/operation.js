@@ -4,18 +4,15 @@ import axios from 'axios';
 export const taskApi = axios.create({
   baseURL: 'https://wallet.goit.ua',
 });
-// Utility to add JWT
+
 const setToken = token => {
   taskApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
-// Utility to remove JWT
+
 const clearToken = token => {
   taskApi.defaults.headers.common.Authorization = '';
 };
-/*
- * POST @ /users/signup
- * body: { name, email, password }
- */
+
 export const registerThunk = createAsyncThunk(
   'auth/register',
   async (credentials, thunkApi) => {
@@ -33,10 +30,7 @@ export const registerThunk = createAsyncThunk(
     }
   }
 );
-/*
- * POST @ /users/login
- * body: { email, password }
- */
+
 export const loginThunk = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
@@ -49,10 +43,6 @@ export const loginThunk = createAsyncThunk(
     }
   }
 );
-/*
- * POST @ /users/logout
- * headers: Authorization: Bearer token
- */
 
 export const logoutThunk = createAsyncThunk(
   'auth/logout',

@@ -4,7 +4,7 @@ import { authReducer } from './registration/slice';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
+    auth,
     transactions: transactionsReducer,
   },
 });
