@@ -1,4 +1,4 @@
-const { createSlice, isAnyOf, configureStore } = require('@reduxjs/toolkit');
+const { createSlice, isAnyOf } = require('@reduxjs/toolkit');
 const {
   registerThunk,
   refreshThunk,
@@ -12,7 +12,7 @@ const initialState = {
     email: '',
   },
   token: null,
-  isLoading: false,
+  isLogin: false,
   isError: false,
 };
 
@@ -21,15 +21,6 @@ const slice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addMatcher(
-        isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
-        (state, { payload }) => {
-          state.token = payload.token;
-          state.user.name = payload.user.username;
-          state.user.email = payload.user.email;
-          state.isLogin = true;
-        }
-      )
       .addCase(logoutThunk.fulfilled, state => {
         return (state = initialState);
       })
@@ -44,15 +35,17 @@ const slice = createSlice({
       })
       .addCase(refreshThunk.rejected, state => {
         state.isRefresh = false;
-      });
+      })
+      .addMatcher(
+        isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
+        (state, { payload }) => {
+          state.token = payload.token;
+          state.user.name = payload.user.username;
+          state.user.email = payload.user.email;
+          state.isLogin = true;
+        }
+      );
   },
 });
 
 export const authReducer = slice.reducer;
-
-// Добавить в общий стор store и удалить из слайса
-export const store = configureStore({
-  reducer: {
-    contact: authReducer,
-  },
-});

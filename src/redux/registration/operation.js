@@ -21,7 +21,12 @@ export const registerThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      if (error.response) {
+        if (error.response.status === 409) {
+          alert('We already have than email');
+        }
+        return thunkApi.rejectWithValue(error.message);
+      }
     }
   }
 );
