@@ -1,4 +1,5 @@
 import React from 'react';
+import StatisticsTab from 'ui/pages/StatisticsTab/StatisticsTab';
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React homework template
+      <StatisticsTab />
     </div>
   );
 };
