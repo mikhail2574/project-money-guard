@@ -29,7 +29,6 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 42px 0; */
 
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(50px);
@@ -135,30 +134,3 @@ export const StyledDesc = styled.p`
   margin-bottom: 10px;
   font-weight: ${props => props.theme.fontWeights.medium};
 `;
-
-// export const LoginFormS = styled.div`
-//   .loginForm {
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     padding: 42px 0;
-//     .boxLogin {
-//       position: relative;
-//     }
-//     .iconEmail {
-//       position: absolute;
-//       left: 5px;
-//       top: 30px;
-//       font-size: 24px;
-//       color: rgb(255 255 255 / 0.6);
-//     }
-//     .iconPass {
-//       position: absolute;
-//       left: 5px;
-//       top: 30px;
-//       font-size: 24px;
-//       color: rgb(255 255 255 / 0.6);
-//     }
-//   }
-// `;
