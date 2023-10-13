@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const taskApi = axios.create({
   baseURL: 'https://wallet.goit.ua',
@@ -23,7 +24,16 @@ export const registerThunk = createAsyncThunk(
     } catch (error) {
       if (error.response) {
         if (error.response.status === 409) {
-          alert('We already have than email');
+          toast.error('We already have that email', {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'colored',
+          });
         }
         return thunkApi.rejectWithValue(error.message);
       }
