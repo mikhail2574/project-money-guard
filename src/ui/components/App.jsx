@@ -1,4 +1,5 @@
 import React from 'react';
+import { Register } from 'ui/pages/RegistrationPage/RegistrationPage';
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React homework template
+      <Register />
     </div>
   );
 };
