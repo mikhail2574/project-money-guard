@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/project-money-guard/static/css/main.942f1daf.css",
-    "main.js": "/project-money-guard/static/js/main.d0f81bb6.js",
+    "main.css": "/project-money-guard/static/css/main.36f3c990.css",
+    "main.js": "/project-money-guard/static/js/main.3f82f3e7.js",
+    "static/media/register-desktop.jpg": "/project-money-guard/static/media/register-desktop.5d1aec93106f96a70e08.jpg",
+    "static/media/logo.svg": "/project-money-guard/static/media/logo.dce3145872188e100148c46882b30412.svg",
     "index.html": "/project-money-guard/index.html",
-    "main.942f1daf.css.map": "/project-money-guard/static/css/main.942f1daf.css.map",
-    "main.d0f81bb6.js.map": "/project-money-guard/static/js/main.d0f81bb6.js.map"
+    "main.36f3c990.css.map": "/project-money-guard/static/css/main.36f3c990.css.map",
+    "main.3f82f3e7.js.map": "/project-money-guard/static/js/main.3f82f3e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.942f1daf.css",
-    "static/js/main.d0f81bb6.js"
+    "static/css/main.36f3c990.css",
+    "static/js/main.3f82f3e7.js"
   ]
 }
