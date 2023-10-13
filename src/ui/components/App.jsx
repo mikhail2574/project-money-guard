@@ -1,5 +1,5 @@
 import React from 'react';
-import StatisticsTab from 'ui/pages/StatisticsTab/StatisticsTab';
+import { Register } from 'ui/pages/RegistrationPage/RegistrationPage';
 
 export const App = () => {
   return (
@@ -13,7 +13,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <StatisticsTab />
+      <Register />
     </div>
   );
 };
