@@ -129,8 +129,3 @@ export const StyledLogo = styled.img`
     width: 36px;
   }
 `;
-export const StyledDesc = styled.p`
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-weight: ${props => props.theme.fontWeights.medium};
-`;
