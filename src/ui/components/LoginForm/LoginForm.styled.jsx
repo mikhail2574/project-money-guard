@@ -97,8 +97,11 @@ export const StyledLink = styled(NavLink)`
   cursor: pointer;
   background-color: #ffffff;
   color: #623f8b;
+  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
   &:hover {
+    transform: scale(1.01);
     font-weight: 600;
+    box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.2);
   }
   @media screen and (min-width: 768px) {
     width: 300px;
