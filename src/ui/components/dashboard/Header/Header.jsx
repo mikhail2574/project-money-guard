@@ -13,8 +13,16 @@ import {
   ExitBtn,
   TextExit,
 } from './Header.styled';
+import { useMyContext } from 'context/useMyContext';
+import { Modal } from 'ui/components/Modal/Modal';
+import { Logout } from '../Logout/Logout';
 
 export const Header = () => {
+  const { isOpen, open } = useMyContext();
+  // const navigate = useNavigate();
+  // const { useDispatch, useSelector } = require('react-redux');
+  // const dispatch = useDispatch();
+  // const buttonRef = useRef(null);
   const userEmail = useSelector(state => state.auth.user.email);
   const navigate = useNavigate();
 
@@ -43,6 +51,14 @@ export const Header = () => {
           </ExitBtn>
         </ExitCont>
       </HeaderContainer>
+      {/* {modalType === 'modal/toggleLogOutModal' && isModalOpen && (
+        <Modal children={<Logout />} />
+      )} */}
+      {isOpen ? (
+        <Modal>
+          <Logout />
+        </Modal>
+      ) : null}
     </>
   );
 };

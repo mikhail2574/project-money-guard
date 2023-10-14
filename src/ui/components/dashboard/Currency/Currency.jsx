@@ -69,15 +69,24 @@ export const Currency = () => {
           </tbody>
         </StyledTable>
         <Graph>
-          <picture>
-            <source
-              srcSet={`${desk} 1x,${desk2} 2x`}
-              media="(min-width:1280px)"
-            />
-            <source srcSet={`${tab} 1x,${tab2} 2x`} media="(min-width:768px)" />
-            <source srcSet={`${mob} 1x,${mob2} 2x`} media="(min-width:320px)" />
-            <img src={`${mob}`} alt="Banking App Interface" />
-          </picture>
+          <div>
+            <picture>
+              <source
+                srcSet={`${desk} 1x,${desk2} 2x`}
+                media="(min-width:1280px)"
+              />
+              <source
+                srcSet={`${tab} 1x,${tab2} 2x`}
+                media="(min-width:768px)"
+              />
+              <source
+                srcSet={`${mob} 1x,${mob2} 2x`}
+                media="(min-width:320px)"
+              />
+              <img src={`${mob}`} alt="Banking App Interface" />
+            </picture>
+          </div>
+
           <Ball>{currency[0].rateBuy.toFixed(2)}</Ball>
           <BallEur>{currency[1].rateBuy.toFixed(2)}</BallEur>
         </Graph>
