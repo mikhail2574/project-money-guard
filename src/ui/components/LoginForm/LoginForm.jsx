@@ -27,7 +27,7 @@ const LoginForm = () => {
     dispatch(loginThunk(data))
       .unwrap()
       .then(res => {
-        toast.success(`Welcome, ${res.user.name}!`);
+        toast.success(`Welcome, ${res.user.email.split('@')[0]}!`);
 
         navigate(location.state?.from ?? '/home');
       })
@@ -48,6 +48,7 @@ const LoginForm = () => {
           <input
             type="email"
             name="email"
+            title="Enter an email"
             placeholder="Email"
             minLength={3}
             required
@@ -61,8 +62,8 @@ const LoginForm = () => {
             type="password"
             name="password"
             placeholder="Enter password"
-            title="Enter 5-12 symbols"
-            minLength={5}
+            title="Enter 6-12 symbols"
+            minLength={6}
             maxLength={12}
             required
             {...register('password')}

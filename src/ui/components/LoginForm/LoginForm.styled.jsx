@@ -95,10 +95,14 @@ export const StyledLink = styled(NavLink)`
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  background-color: #ffffff;
-  color: #623f8b;
+
+  background-color: var(--white);
+  color: var(--text-button);
+  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
   &:hover {
+    transform: scale(1.01);
     font-weight: 600;
+    box-shadow: 1px 6px 6px 0px var(--transp-20);
   }
   @media screen and (min-width: 768px) {
     width: 300px;
@@ -113,7 +117,7 @@ export const StyledTitle = styled.div`
   padding-top: 97px;
   .logoText {
     font-size: 19px;
-    color: white;
+    color: var(--white);
     @media screen and (min-width: 768px) {
       font-size: 27px;
     }
