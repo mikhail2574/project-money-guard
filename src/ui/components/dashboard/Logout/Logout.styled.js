@@ -45,7 +45,7 @@ export const ButtonsContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  /* & > button {
+  & > button {
     margin: 0 !important;
-  } */
+  }
 `;
