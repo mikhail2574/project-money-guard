@@ -6,26 +6,20 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from 'redux/store';
-<<<<<<< Updated upstream
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor } from 'redux/store';
-=======
 import { ContextProvider } from 'context/ContextProvider';
->>>>>>> Stashed changes
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <BrowserRouter basename="/project-money-guard">
       <Provider store={store}>
-<<<<<<< Updated upstream
         <PersistGate loading={null} persistor={persistor}>
           <App />
         </PersistGate>
-=======
         <ContextProvider>
           <App />
         </ContextProvider>
->>>>>>> Stashed changes
         <GlobalStyles />
       </Provider>
     </BrowserRouter>
