@@ -33,7 +33,9 @@ export const Logout = () => {
         <Button variant="login" onClick={handleLogout}>
           Logout
         </Button>
-        <Button variant="cancel">Cancel</Button>
+        <Button variant="cancel" onClick={close}>
+          Cancel
+        </Button>
       </ButtonsContainer>
     </LogoutContainer>
   );

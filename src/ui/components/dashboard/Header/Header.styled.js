@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
+export const HeaderBg = styled.div`
+  background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
+    0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
+`;
+
 export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
-  background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
-    0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
 `;
 
 export const Logolink = styled.a`
@@ -69,11 +71,10 @@ export const ExitBtn = styled.button`
   justify-content: space-between;
   border: none;
   background-color: transparent;
-  padding: 0;
+  padding: 20px 0;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
-    padding: 20px 0;
     &:hover,
     :focus {
       transform: scale(1.1);

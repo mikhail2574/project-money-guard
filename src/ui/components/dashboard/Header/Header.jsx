@@ -4,6 +4,7 @@ import logout from 'ui/icons/logout.svg';
 import logo from 'ui/icons/logo-second.svg';
 import { useSelector } from 'react-redux';
 import {
+  HeaderBg,
   HeaderContainer,
   Logolink,
   Logo,
@@ -31,8 +32,8 @@ export const Header = () => {
   };
 
   return (
-    <>
-      <HeaderContainer>
+    <HeaderBg>
+      <HeaderContainer className="container">
         <Logolink onClick={goToHome}>
           <Logo src={logo} alt="logotype" />
           <LogoName>Money Guard</LogoName>
@@ -45,6 +46,6 @@ export const Header = () => {
           </ExitBtn>
         </ExitCont>
       </HeaderContainer>
-    </>
+    </HeaderBg>
   );
 };

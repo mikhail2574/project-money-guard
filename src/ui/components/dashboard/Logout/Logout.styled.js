@@ -4,9 +4,12 @@ export const LogoutContainer = styled.div`
   display: flex;
   gap: 52px;
   flex-direction: column;
-  /* background-color: grey; */
   align-items: center;
-  padding: 60px 0;
+  padding: 60px 0px;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px 117px;
+  }
 `;
 
 export const LogoStyled = styled.div`
