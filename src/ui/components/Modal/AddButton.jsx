@@ -1,6 +1,7 @@
 import plus from 'ui/icons/plus.svg';
 import styled from 'styled-components';
-import { useModal } from 'ui/hooks/useModal';
+
+import { useMyContext } from 'context/useMyContext';
 const StyledDiv = styled.div`
   width: 44px;
   height: 44px;
@@ -12,7 +13,7 @@ const StyledDiv = styled.div`
 `;
 
 export const AddButton = () => {
-  const { open, isOpen } = useModal();
+  const { open, isOpen } = useMyContext();
 
   const handleOpen = () => {
     open();
