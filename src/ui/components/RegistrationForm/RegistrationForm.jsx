@@ -81,7 +81,7 @@ export const RegisterForm = () => {
   // заготовка под Navigation
   const isLogin = useSelector(selectIsLogin);
   if (isLogin) {
-    return <Navigate to="DashboardPage" />;
+    return <Navigate to="/home" />;
   }
 
   return (
@@ -97,7 +97,11 @@ export const RegisterForm = () => {
               <SvgPerson />
             </SvgDiv>
 
-            <Input {...register('username')} placeholder="Name" />
+            <Input
+              {...register('username')}
+              placeholder="Name"
+              autocomplete="off"
+            />
           </InputDiv>
           <div>
             <Error>{errors?.username && errors.username.message}</Error>
@@ -109,7 +113,11 @@ export const RegisterForm = () => {
               <SvgEmail />
             </SvgDiv>
 
-            <Input {...register('email')} placeholder="E-mail" />
+            <Input
+              {...register('email')}
+              placeholder="E-mail"
+              autocomplete="off"
+            />
           </InputDiv>
           <div>
             <Error>{errors?.email && errors.email.message}</Error>
@@ -125,6 +133,7 @@ export const RegisterForm = () => {
               type={passwordShown ? 'text' : 'password'}
               {...register('password')}
               placeholder="Password"
+              autocomplete="off"
             />
             <EyeDiv>
               <i onClick={togglePasswordVisiblity}>{eye}</i>
@@ -143,6 +152,7 @@ export const RegisterForm = () => {
               type={passwordShown ? 'text' : 'password'}
               {...register('confirmPass', { shouldUnregister: true })}
               placeholder="Confirm password"
+              autocomplete="off"
             />
           </InputDiv>
           <div>
