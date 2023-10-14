@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledSelector } from './DateSelector.styled';
 
-const DateSelector = ({ options, value, onChange }) => {
+const DateSelector = ({ options, value, onChange, ariaLabel }) => {
   const customScrollbarStyles = {
     menuList: provided => ({
       ...provided,
@@ -17,10 +17,12 @@ const DateSelector = ({ options, value, onChange }) => {
   return (
     <div>
       <StyledSelector
-        value={value}
         options={options}
+        defaultValue={value}
+        aria-label={ariaLabel}
         placeholder="Select a date"
         onChange={value => onChange(value)}
+        classNamePrefix="Select"
         styles={customScrollbarStyles}
       />
     </div>
