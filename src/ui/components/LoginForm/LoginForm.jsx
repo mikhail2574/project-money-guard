@@ -9,13 +9,13 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { loginThunk } from '../../../redux/registration/operation';
-import { selectIsLogin } from '../../../redux/registration/selectors';
+import { loginThunk } from 'redux/registration/operation';
+import { selectIsLogin } from 'redux/registration/selectors';
 import { toast } from 'react-toastify';
 import { StyledLink } from './LoginForm.styled';
 import Button from '../home/shared/Button';
 import { MdEmail, MdHttps } from 'react-icons/md';
-import logoImg from '../../icons/logo.svg';
+import logoImg from 'ui/icons/logo.svg';
 
 const LoginForm = () => {
   const isLoggedIn = useSelector(selectIsLogin);

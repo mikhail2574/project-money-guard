@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import loginDesktop from '../../images/login/login-desktop.jpg';
+import loginDesktop from 'ui/images/login/login-desktop.webp';
 
 export const NotFoundPageSection = styled.section`
   width: 100dvw;
