@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import { HomeTab } from 'ui/pages/HomeTab/HomeTab';
 import NotFoundPage from 'ui/pages/NotFoundPage/NotFoundPage';
 import LoginPage from 'ui/pages/LoginPage/LoginPage';
+import StatisticsTab from 'ui/pages/StatisticsTab/StatisticsTab';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { RedirectRoute } from './Routes/RedirectRoute';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,7 +35,9 @@ export const App = () => {
         />
         <Route
           path="/statistics"
-          element={<PrivateRoute redirectTo="/login" component={<HomeTab />} />}
+          element={
+            <PrivateRoute redirectTo="/login" component={<StatisticsTab />} />
+          }
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
