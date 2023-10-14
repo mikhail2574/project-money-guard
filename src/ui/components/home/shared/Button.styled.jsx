@@ -14,7 +14,7 @@ export const ButtonStyle = styled.button`
   font-size: 18px;
   line-height: 1.5;
   text-transform: uppercase;
-  color: white;
+  color: var(--white);
   cursor: pointer;
   box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
   @media screen and (min-width: 768px) {
@@ -29,12 +29,12 @@ export const ButtonStyle = styled.button`
       rgb(172, 43, 169) 70%,
       rgb(153, 50, 225)
     );
-    color: white;
+    color: var(--white);
     &:hover {
       height: 50px;
-      background-color: #ffffff;
-      color: #623f8b;
-      box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.2);
+      background-color: var(--white);
+      color: var(--text-button);
+      box-shadow: 1px 6px 6px 0px var(--transp-20);
       transform: scale(1.01);
     }
   }
@@ -47,12 +47,12 @@ export const ButtonStyle = styled.button`
       rgb(172, 43, 169) 70%,
       rgb(153, 50, 225)
     );
-    color: white;
+    color: var(--white);
     &:hover {
       height: 50px;
-      background-color: #ffffff;
-      color: #623f8b;
-      box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.2);
+      background-color: var(--white);
+      color: var(--text-button);
+      box-shadow: 1px 6px 6px 0px var(--transp-20);
       transform: scale(1.01);
     }
   }
@@ -71,14 +71,13 @@ export const ButtonStyle = styled.button`
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
-    background-color: #ffffff;
-    color: #623f8b;
-
+    background-color: var(--white);
+    color: var(--text-button);
     &:hover {
       height: 50px;
-      background-color: #f5f4fa;
-      color: #623f8b;
-      box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.2);
+      background-color: var(--white);
+      color: var(--text-button);
+      box-shadow: 1px 6px 6px 0px var(--transp-20);
       transform: scale(1.01);
     }
   }
