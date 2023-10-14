@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-money-guard/static/css/main.d6dcde50.css",
-    "main.js": "/project-money-guard/static/js/main.3b79d432.js",
+    "main.js": "/project-money-guard/static/js/main.e1c347f1.js",
     "static/media/Poppins-Regular.ttf": "/project-money-guard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-SemiBold.ttf": "/project-money-guard/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Bold.ttf": "/project-money-guard/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
@@ -21,10 +21,10 @@
     "static/media/logo-second.svg": "/project-money-guard/static/media/logo-second.ffeeeefcbe61417cbb56220cd92da552.svg",
     "static/media/logout.svg": "/project-money-guard/static/media/logout.b7825dd385e5b1eb4111f1cd6217a322.svg",
     "main.d6dcde50.css.map": "/project-money-guard/static/css/main.d6dcde50.css.map",
-    "main.3b79d432.js.map": "/project-money-guard/static/js/main.3b79d432.js.map"
+    "main.e1c347f1.js.map": "/project-money-guard/static/js/main.e1c347f1.js.map"
   },
   "entrypoints": [
     "static/css/main.d6dcde50.css",
-    "static/js/main.3b79d432.js"
+    "static/js/main.e1c347f1.js"
   ]
 }
