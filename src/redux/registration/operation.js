@@ -10,7 +10,7 @@ const setToken = token => {
   taskApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const clearToken = token => {
+const clearToken = () => {
   taskApi.defaults.headers.common.Authorization = '';
 };
 
@@ -67,13 +67,14 @@ export const logoutThunk = createAsyncThunk(
 );
 
 export const refreshThunk = createAsyncThunk(
-  'refresh',
-  async (credentials, thunkAPI) => {
-    const savedToken = thunkAPI.getState().auth.token;
-    if (!savedToken) return thunkAPI.rejectWithValue('Token is not exist');
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const savedToken = thunkAPI.getState();
+    const persistedToken = savedToken.auth.token;
+    if (!persistedToken) return thunkAPI.rejectWithValue('Token is not exist');
 
     try {
-      setToken(savedToken);
+      setToken(persistedToken);
       const { data } = await taskApi.get('/api/users/current');
       return data;
     } catch (error) {
