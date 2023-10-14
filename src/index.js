@@ -14,13 +14,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <BrowserRouter basename="/project-money-guard">
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
         <ContextProvider>
-          <App />
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+            <GlobalStyles />
+          </PersistGate>
         </ContextProvider>
-        <GlobalStyles />
       </Provider>
     </BrowserRouter>
   </>

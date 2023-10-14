@@ -29,7 +29,7 @@ const LoginForm = () => {
       .then(res => {
         toast.success(`Welcome, ${res.user.name}!`);
 
-        navigate(location.state?.from ?? '/');
+        navigate(location.state?.from ?? '/home');
       })
       .catch(() => toast.warn('Data is not valid! Try again!'));
   };
@@ -72,8 +72,7 @@ const LoginForm = () => {
         <Button type="submit" variant="login">
           Log in
         </Button>
-        <StyledLink>register</StyledLink>
-        {/* <StyledLink to="/register">register</StyledLink> */}
+        <StyledLink to="/register">register</StyledLink>
       </StyledForm>
     </StyledLoginSection>
   );
