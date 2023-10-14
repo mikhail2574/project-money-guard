@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import { ToastContainer } from 'react-toastify';
 import { Register } from 'ui/pages/RegistrationPage/RegistrationPage';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +20,6 @@ export const App = () => {
   return (
     <div>
       <ToastContainer />
-
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
