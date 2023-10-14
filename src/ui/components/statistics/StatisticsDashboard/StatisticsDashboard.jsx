@@ -1,6 +1,11 @@
 import DateSelector from './DateSelector/DateSelector';
 
-const StatisticsDashboard = ({ changeYear, changeMonth }) => {
+const StatisticsDashboard = ({
+  changeYear,
+  changeMonth,
+  selectedYear,
+  selectedMonth,
+}) => {
   const months = [
     'January',
     'February',
@@ -27,8 +32,18 @@ const StatisticsDashboard = ({ changeYear, changeMonth }) => {
   }));
   return (
     <>
-      <DateSelector options={monthOptions} onChange={changeMonth} />
-      <DateSelector options={yearOptions} onChange={changeYear} />
+      <DateSelector
+        options={monthOptions}
+        value={selectedMonth}
+        onChange={changeMonth}
+        ariaLabel={'Select month'}
+      />
+      <DateSelector
+        options={yearOptions}
+        value={selectedYear}
+        onChange={changeYear}
+        ariaLabel={'Select year'}
+      />
     </>
   );
 };

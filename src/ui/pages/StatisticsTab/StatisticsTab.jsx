@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories, fetchSummary } from 'redux/transactions/operations';
 import { selectCategories, selectSummary } from 'redux/transactions/selectors';
@@ -8,6 +7,11 @@ import {
   StatisticsDashboard,
   StatisticsTable,
 } from 'ui/components/statistics';
+import {
+  DashboardWrapper,
+  LeftSideWrapper,
+  StatSection,
+} from './StatisticsTab.styled';
 
 const StatisticsTab = () => {
   const dispatch = useDispatch();
@@ -34,19 +38,21 @@ const StatisticsTab = () => {
   };
 
   return (
-    <section>
+    <StatSection>
       <h2>Statistics</h2>
-      <div>
+      <LeftSideWrapper>
         <Chart categories={categories} statSummary={statSummary} />
-        <div>
+        <DashboardWrapper>
           <StatisticsDashboard
+            selectedYear={selectedYear}
+            selectedMonth={selectedMonth}
             changeYear={onYearChange}
             changeMonth={onMonthChange}
           />
           <StatisticsTable statSummary={statSummary} />
-        </div>
-      </div>
-    </section>
+        </DashboardWrapper>
+      </LeftSideWrapper>
+    </StatSection>
   );
 };
 
