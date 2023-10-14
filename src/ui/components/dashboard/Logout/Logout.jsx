@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from 'redux/registration/operation';
 import Logos from 'ui/icons/logo.svg';
 import {
   LogoutContainer,
@@ -11,6 +13,12 @@ import {
 import Button from 'ui/components/home/shared/Button';
 
 export const Logout = () => {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logoutThunk());
+  };
+
   return (
     <LogoutContainer>
       <LogoStyled>
@@ -19,10 +27,10 @@ export const Logout = () => {
       </LogoStyled>
       <Question>Are you sure you want to log out?</Question>
       <ButtonsContainer>
-        <Button variant="login">Logout</Button>
-        <Button variant="cancel">Cencel</Button>
-        {/* <LogoutBtn type="button">Logout</LogoutBtn>
-        <CancelBtn type="button">Logout</CancelBtn> */}
+        <Button variant="login" onClick={handleLogout}>
+          Logout
+        </Button>
+        <Button variant="cancel">Cancel</Button>
       </ButtonsContainer>
     </LogoutContainer>
   );
