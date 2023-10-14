@@ -27,7 +27,7 @@ const LoginForm = () => {
     dispatch(loginThunk(data))
       .unwrap()
       .then(res => {
-        toast.success(`Welcome, ${res.user.name}!`);
+        toast.success(`Welcome, ${res.user.email.split('@')[0]}!`);
 
         navigate(location.state?.from ?? '/home');
       })
