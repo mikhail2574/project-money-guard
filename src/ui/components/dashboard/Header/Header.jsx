@@ -14,10 +14,9 @@ import {
   TextExit,
 } from './Header.styled';
 import { useMyContext } from 'context/useMyContext';
-import { Modal } from 'ui/components/Modal/Modal';
-import { Logout } from '../Logout/Logout';
 
 export const Header = () => {
+  const { open, setTypeModal } = useMyContext();
   const userEmail = useSelector(state => state.auth.user.email);
   const navigate = useNavigate();
 
@@ -25,6 +24,11 @@ export const Header = () => {
     navigate('/home');
   };
   const username = userEmail ? userEmail.split('@')[0] : '';
+
+  const handleOnClick = () => {
+    open();
+    setTypeModal('exit');
+  };
 
   return (
     <>
@@ -35,12 +39,7 @@ export const Header = () => {
         </Logolink>
         <ExitCont>
           <UserName title="Hello :)">{username}</UserName>
-          <ExitBtn
-            id="exit"
-            type="button"
-            // onClick={() => dispatch(toggleLogOutModal())}
-            title="quit"
-          >
+          <ExitBtn id="exit" type="button" onClick={handleOnClick} title="quit">
             <img src={logout} alt="logout" />
             <TextExit>Exit</TextExit>
           </ExitBtn>

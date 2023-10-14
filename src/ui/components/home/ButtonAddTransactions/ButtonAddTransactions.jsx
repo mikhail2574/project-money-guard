@@ -14,11 +14,11 @@ const StyledDiv = styled.div`
 `;
 
 export const ButtonAddTransactions = () => {
-  const { open, isOpen } = useMyContext();
+  const { open, isOpen, setTypeModal } = useMyContext();
 
   const handleOpen = () => {
     open();
-    console.log(isOpen);
+    setTypeModal('add');
   };
   return (
     <StyledDiv onClick={handleOpen}>
