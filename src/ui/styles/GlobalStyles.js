@@ -42,8 +42,9 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    
   }
-
+  
   p,
   h1, 
   h2,  
@@ -84,6 +85,21 @@ const GlobalStyles = createGlobalStyle`
   textarea:-ms-autofill {
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
+
+  .container {
+  padding: 0 15px;
+  margin: 0 auto;
+  @media screen and (min-width:320px) {
+      max-width: 475px;
+ }
+  @media screen and (min-width:768px) {
+      max-width: 768px;
+ }
+
+  @media screen and (min-width:1258px) {
+      max-width: 1280px;
+ }
+}
 `;
 
 export default GlobalStyles;
