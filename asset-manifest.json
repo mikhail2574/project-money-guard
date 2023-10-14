@@ -1,26 +1,30 @@
 {
   "files": {
-    "main.css": "/project-money-guard/static/css/main.36f3c990.css",
-    "main.js": "/project-money-guard/static/js/main.077e5c8e.js",
-    "static/media/login-tablet.jpg": "/project-money-guard/static/media/login-tablet.9083fa66202d76ae2d4e.jpg",
-    "static/media/register-desktop@2x.jpg": "/project-money-guard/static/media/register-desktop@2x.1006452c317b60d35d26.jpg",
-    "static/media/destop@2x.png": "/project-money-guard/static/media/destop@2x.4de90a2ca885a9a51296.png",
-    "static/media/register-desktop.jpg": "/project-money-guard/static/media/register-desktop.5d1aec93106f96a70e08.jpg",
-    "static/media/deskop.png": "/project-money-guard/static/media/deskop.181fdd0a7d3dcaa073e4.png",
-    "static/media/tablet@2x.png": "/project-money-guard/static/media/tablet@2x.20f739ec182cc4c6f323.png",
-    "static/media/mobile@2x.png": "/project-money-guard/static/media/mobile@2x.cbfa68134d86c565e0bb.png",
-    "static/media/login-desktop.jpg": "/project-money-guard/static/media/login-desktop.20b913d3ca3801ec00e3.jpg",
-    "static/media/tablet.png": "/project-money-guard/static/media/tablet.777ba721b079c94e2c02.png",
-    "static/media/mobile.png": "/project-money-guard/static/media/mobile.7382f80dddc7990834a8.png",
+    "main.css": "/project-money-guard/static/css/main.d6dcde50.css",
+    "main.js": "/project-money-guard/static/js/main.b0af03b4.js",
+    "static/media/Poppins-Regular.ttf": "/project-money-guard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/project-money-guard/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/Poppins-Bold.ttf": "/project-money-guard/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/register-desktop@2x.webp": "/project-money-guard/static/media/register-desktop@2x.e2dccd71598648f779a3.webp",
+    "static/media/destop@2x.webp": "/project-money-guard/static/media/destop@2x.ceb3b50c75d42c8e312d.webp",
+    "static/media/register-desktop.webp": "/project-money-guard/static/media/register-desktop.cee3c73c3985f3f83e42.webp",
+    "static/media/tablet@2x.webp": "/project-money-guard/static/media/tablet@2x.321e7be409f7333818dc.webp",
+    "static/media/mobile@2x.webp": "/project-money-guard/static/media/mobile@2x.da5ab60041d04fa98e92.webp",
+    "static/media/login-desktop.webp": "/project-money-guard/static/media/login-desktop.ba33ab0dd3bb18e0316a.webp",
+    "static/media/deskop.webp": "/project-money-guard/static/media/deskop.6679e5504dfa81d3468c.webp",
+    "static/media/login-tablet.webp": "/project-money-guard/static/media/login-tablet.2ad37c4d63bd2bf5dc2a.webp",
+    "static/media/tablet.webp": "/project-money-guard/static/media/tablet.65a1267fec2387718ede.webp",
+    "static/media/mobile.webp": "/project-money-guard/static/media/mobile.301eb3ba8e0b08235dcb.webp",
     "static/media/logo.svg": "/project-money-guard/static/media/logo.dce3145872188e100148c46882b30412.svg",
+    "static/media/login-mobile.webp": "/project-money-guard/static/media/login-mobile.4056e7b85f4d8796cf40.webp",
     "index.html": "/project-money-guard/index.html",
     "static/media/logo-second.svg": "/project-money-guard/static/media/logo-second.ffeeeefcbe61417cbb56220cd92da552.svg",
     "static/media/logout.svg": "/project-money-guard/static/media/logout.b7825dd385e5b1eb4111f1cd6217a322.svg",
-    "main.36f3c990.css.map": "/project-money-guard/static/css/main.36f3c990.css.map",
-    "main.077e5c8e.js.map": "/project-money-guard/static/js/main.077e5c8e.js.map"
+    "main.d6dcde50.css.map": "/project-money-guard/static/css/main.d6dcde50.css.map",
+    "main.b0af03b4.js.map": "/project-money-guard/static/js/main.b0af03b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.36f3c990.css",
-    "static/js/main.077e5c8e.js"
+    "static/css/main.d6dcde50.css",
+    "static/js/main.b0af03b4.js"
   ]
 }
