@@ -34,7 +34,7 @@ const LoginForm = () => {
       .catch(() => toast.warn('Data is not valid! Try again!'));
   };
   if (isLoggedIn) {
-    return <Navigate to="/contacts" />;
+    return <Navigate to="/home" />;
   }
   return (
     <StyledLoginSection>
