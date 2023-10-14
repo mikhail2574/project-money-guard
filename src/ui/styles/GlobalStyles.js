@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --bg: #101010;
     --bg-table: rgba(82, 59, 126, 0.6);
+    --text-button: #623F8B;
     --white: #fbfbfb;
     --purple: #734aef;
     --yellow: #ffb627;

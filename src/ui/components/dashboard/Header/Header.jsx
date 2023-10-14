@@ -39,7 +39,7 @@ export const Header = () => {
             id="exit"
             type="button"
             // onClick={() => dispatch(toggleLogOutModal())}
-            title="Logout from your acc"
+            title="quit"
           >
             <img src={logout} alt="logout" />
             <TextExit>Exit</TextExit>
