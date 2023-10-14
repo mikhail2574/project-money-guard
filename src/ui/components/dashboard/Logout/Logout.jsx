@@ -11,12 +11,15 @@ import {
   ButtonsContainer,
 } from './Logout.styled';
 import Button from 'ui/components/home/shared/Button';
+import { useMyContext } from 'context/useMyContext';
 
 export const Logout = () => {
   const dispatch = useDispatch();
+  const { close } = useMyContext();
 
   const handleLogout = () => {
     dispatch(logoutThunk());
+    close();
   };
 
   return (
