@@ -19,18 +19,6 @@ export const StatSection = styled.div`
     padding: 0;
   }
 `;
-
-// export const RightSideStatWrapper = styled.div`
-//   @media screen and (max-width: 767px) {
-//   }
-//   @media screen and (min-width: 768px) and (max-width: 1279px) {
-//     display: flex;
-//   }
-//   @media screen and (min-width: 1280px) {
-//     display: flex;
-//   }
-// `;
-
 export const LeftSideWrapper = styled.div`
   @media screen and (max-width: 767px) {
     flex-direction: column;

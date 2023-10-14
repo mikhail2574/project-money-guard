@@ -64,6 +64,14 @@ export const StyledSelector = styled(Select)`
 
   .Select__menu-list {
     height: 160px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #bfb4dd;
+      border-radius: 12px;
+    }
   }
 
   .css-t3ipsp-control {
