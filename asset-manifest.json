@@ -1,15 +1,25 @@
 {
   "files": {
     "main.css": "/project-money-guard/static/css/main.36f3c990.css",
-    "main.js": "/project-money-guard/static/js/main.98757b7c.js",
+    "main.js": "/project-money-guard/static/js/main.bd881a83.js",
+    "static/media/login-tablet.jpg": "/project-money-guard/static/media/login-tablet.9083fa66202d76ae2d4e.jpg",
+    "static/media/destop@2x.png": "/project-money-guard/static/media/destop@2x.4de90a2ca885a9a51296.png",
     "static/media/register-desktop.jpg": "/project-money-guard/static/media/register-desktop.5d1aec93106f96a70e08.jpg",
+    "static/media/deskop.png": "/project-money-guard/static/media/deskop.181fdd0a7d3dcaa073e4.png",
+    "static/media/tablet@2x.png": "/project-money-guard/static/media/tablet@2x.20f739ec182cc4c6f323.png",
+    "static/media/mobile@2x.png": "/project-money-guard/static/media/mobile@2x.cbfa68134d86c565e0bb.png",
+    "static/media/login-desktop.jpg": "/project-money-guard/static/media/login-desktop.20b913d3ca3801ec00e3.jpg",
+    "static/media/tablet.png": "/project-money-guard/static/media/tablet.777ba721b079c94e2c02.png",
+    "static/media/mobile.png": "/project-money-guard/static/media/mobile.7382f80dddc7990834a8.png",
     "static/media/logo.svg": "/project-money-guard/static/media/logo.dce3145872188e100148c46882b30412.svg",
     "index.html": "/project-money-guard/index.html",
+    "static/media/logo-second.svg": "/project-money-guard/static/media/logo-second.ffeeeefcbe61417cbb56220cd92da552.svg",
+    "static/media/logout.svg": "/project-money-guard/static/media/logout.b7825dd385e5b1eb4111f1cd6217a322.svg",
     "main.36f3c990.css.map": "/project-money-guard/static/css/main.36f3c990.css.map",
-    "main.98757b7c.js.map": "/project-money-guard/static/js/main.98757b7c.js.map"
+    "main.bd881a83.js.map": "/project-money-guard/static/js/main.bd881a83.js.map"
   },
   "entrypoints": [
     "static/css/main.36f3c990.css",
-    "static/js/main.98757b7c.js"
+    "static/js/main.bd881a83.js"
   ]
 }
