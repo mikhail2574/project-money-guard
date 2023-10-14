@@ -19,6 +19,10 @@ export const StyledContent = styled.div`
 `;
 
 export const StyledButton = styled.span`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
   position: absolute;
   cursor: pointer;
   top: 20px;

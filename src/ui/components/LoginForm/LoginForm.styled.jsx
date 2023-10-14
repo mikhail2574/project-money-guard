@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import loginMobile from '../../images/login/login-mobile.jpg';
-import loginTablet from '../../images/login/login-tablet.jpg';
-import loginDesktop from '../../images/login/login-desktop.jpg';
+import loginMobile from 'ui/images/login/login-mobile.webp';
+import loginTablet from 'ui/images/login/login-tablet.webp';
+import loginDesktop from 'ui/images/login/login-desktop.webp';
 
 export const StyledLoginSection = styled.section`
   width: 100dvw;

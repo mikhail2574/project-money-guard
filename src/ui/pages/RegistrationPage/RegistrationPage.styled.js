@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import bd from 'ui/images/register/register-desktop.jpg';
-import bd2 from 'ui/images/register/register-desktop@2x.jpg';
+import bd from 'ui/images/register/register-desktop.webp';
+import bd2 from 'ui/images/register/register-desktop@2x.webp';
 
 export const MainContainer = styled.main`
   display: flex;

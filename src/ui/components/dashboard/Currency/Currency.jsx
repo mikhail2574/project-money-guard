@@ -1,10 +1,10 @@
 import axios from 'axios';
-import mob from 'ui/images/chart/mobile.png';
-import mob2 from 'ui/images/chart/mobile@2x.png';
-import tab from 'ui/images/chart/tablet.png';
-import tab2 from 'ui/images/chart/tablet@2x.png';
-import desk from 'ui/images/chart/deskop.png';
-import desk2 from 'ui/images/chart/destop@2x.png';
+import mob from 'ui/images/chart/mobile.webp';
+import mob2 from 'ui/images/chart/mobile@2x.webp';
+import tab from 'ui/images/chart/tablet.webp';
+import tab2 from 'ui/images/chart/tablet@2x.webp';
+import desk from 'ui/images/chart/deskop.webp';
+import desk2 from 'ui/images/chart/destop@2x.webp';
 
 import { useEffect, useState } from 'react';
 import { Ball, BallEur, Graph, StyledTable, Wrap } from './Currency.styled';
