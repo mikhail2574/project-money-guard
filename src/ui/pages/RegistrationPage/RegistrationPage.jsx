@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { RegisterForm } from 'ui/components/RegistrationForm/RegistrationForm';
-import bd from 'ui/images/register/register-desktop.jpg';
+import bd from 'ui/images/register/register-desktop.webp';
 // import { desktopStyles } from 'styles/breakpoints';
 
 export const Register = () => {

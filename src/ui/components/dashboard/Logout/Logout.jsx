@@ -7,9 +7,8 @@ import {
   LogoTitle,
   Question,
   ButtonsContainer,
-  LogoutBtn,
-  CancelBtn,
 } from './Logout.styled';
+import Button from 'ui/components/home/shared/Button';
 
 export const Logout = () => {
   return (
@@ -20,8 +19,10 @@ export const Logout = () => {
       </LogoStyled>
       <Question>Are you sure you want to log out?</Question>
       <ButtonsContainer>
-        <LogoutBtn type="button">Logout</LogoutBtn>
-        <CancelBtn type="button">Logout</CancelBtn>
+        <Button variant="login">Logout</Button>
+        <Button variant="cancel">Cencel</Button>
+        {/* <LogoutBtn type="button">Logout</LogoutBtn>
+        <CancelBtn type="button">Logout</CancelBtn> */}
       </ButtonsContainer>
     </LogoutContainer>
   );
