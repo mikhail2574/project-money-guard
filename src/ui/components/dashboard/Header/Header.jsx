@@ -12,8 +12,12 @@ import {
   ExitBtn,
   TextExit,
 } from './Header.styled';
+import { useMyContext } from 'context/useMyContext';
+import { Modal } from 'ui/components/Modal/Modal';
+import { Logout } from '../Logout/Logout';
 
 export const Header = () => {
+  const { isOpen, open } = useMyContext();
   // const navigate = useNavigate();
   // const { useDispatch, useSelector } = require('react-redux');
   // const dispatch = useDispatch();
@@ -35,12 +39,7 @@ export const Header = () => {
         </Logolink>
         <ExitCont>
           <UserName title="Hello :)">Username</UserName>
-          <ExitBtn
-            id="exit"
-            type="button"
-            // onClick={() => dispatch(toggleLogOutModal())}
-            title="quit"
-          >
+          <ExitBtn id="exit" type="button" onClick={() => open()} title="quit">
             <img src={logout} alt="logout" />
             <TextExit>Exit</TextExit>
           </ExitBtn>
@@ -49,6 +48,11 @@ export const Header = () => {
       {/* {modalType === 'modal/toggleLogOutModal' && isModalOpen && (
         <Modal children={<Logout />} />
       )} */}
+      {isOpen ? (
+        <Modal>
+          <Logout />
+        </Modal>
+      ) : null}
     </>
   );
 };

@@ -4,7 +4,7 @@ export const LogoutContainer = styled.div`
   display: flex;
   gap: 52px;
   flex-direction: column;
-  background-color: grey;
+  /* background-color: grey; */
   align-items: center;
   padding: 60px 0;
 `;

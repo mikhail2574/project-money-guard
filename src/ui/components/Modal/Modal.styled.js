@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
-import bd from 'ui/images/register/register-mobile.jpg';
+import bd from 'ui/images/register/register-mobile.webp';
+
 export const StyledOverlay = styled.div`
+  z-index: 300;
+  backdrop-filter: blur(5px);
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
   display: grid;
   place-content: center;
+  @media screen and (max-width: 767px) {
+    margin-top: 60px;
+  }
 `;
 export const StyledContent = styled.div`
   position: relative;
