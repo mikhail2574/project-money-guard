@@ -1,24 +1,14 @@
 import React from 'react';
-import { AddButton } from './Modal/AddButton';
-import { Modal } from './Modal/Modal';
-import { useModal } from '../hooks/useModal';
+
+import { ToastContainer } from 'react-toastify';
+import { Register } from 'ui/pages/RegistrationPage/RegistrationPage';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
-  const { isOpen } = useModal();
-
   return (
-    <div
-    // style={{
-    //   height: '100vh',
-    //   display: 'flex',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   fontSize: 40,
-    //   color: '#010101',
-    // }}
-    >
-      <AddButton />
-      {isOpen ? <Modal /> : null}
+    <div>
+      <Register />
+      <ToastContainer />
     </div>
   );
 };
