@@ -34,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -47,7 +47,7 @@ const GlobalStyles = createGlobalStyle`
   p,
   h1, 
   h2,  
-  h3{
+  h3 {
     margin: 0;
     padding: 0;
   }

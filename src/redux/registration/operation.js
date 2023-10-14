@@ -66,8 +66,6 @@ export const logoutThunk = createAsyncThunk(
   }
 );
 
-// нужен персист для токена
-
 export const refreshThunk = createAsyncThunk(
   'refresh',
   async (credentials, thunkAPI) => {
