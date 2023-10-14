@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { ToastContainer } from 'react-toastify';
 import { Register } from 'ui/pages/RegistrationPage/RegistrationPage';
@@ -9,8 +9,15 @@ import NotFoundPage from 'ui/pages/NotFoundPage/NotFoundPage';
 import LoginPage from 'ui/pages/LoginPage/LoginPage';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { RedirectRoute } from './Routes/RedirectRoute';
+import { useDispatch } from 'react-redux';
+import { refreshThunk } from 'redux/registration/operation';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
+
   return (
     <div>
       <ToastContainer />
