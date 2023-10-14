@@ -81,7 +81,7 @@ export const RegisterForm = () => {
   // заготовка под Navigation
   const isLogin = useSelector(selectIsLogin);
   if (isLogin) {
-    return <Navigate to="DashboardPage" />;
+    return <Navigate to="/home" />;
   }
 
   return (
