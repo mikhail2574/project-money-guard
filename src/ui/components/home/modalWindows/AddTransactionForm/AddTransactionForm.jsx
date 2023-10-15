@@ -95,6 +95,9 @@ export const AddTransactionForm = () => {
               onChange={date => setSelectedDate(date)}
               showIcon={MdDateRange}
             />
+
+            />
+
           </InputContainer>
           <StyledInput type="text" />
         </StyledDiv>
