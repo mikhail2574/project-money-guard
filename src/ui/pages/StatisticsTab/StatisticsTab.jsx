@@ -27,7 +27,8 @@ const StatisticsTab = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchSummary({ selectedYear, selectedMonth }));
+    console.log({ selectedMonth, selectedYear });
+    dispatch(fetchSummary({ selectedMonth, selectedYear }));
   }, [selectedYear, selectedMonth, dispatch]);
 
   const onYearChange = val => {

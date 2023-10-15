@@ -67,12 +67,12 @@ export const fetchCategories = createAsyncThunk(
 
 export const fetchSummary = createAsyncThunk(
   'fetchSummary',
-  async ({ month, year }, { rejectWithValue }) => {
+  async ({ selectedMonth, selectedYear }, { rejectWithValue }) => {
     try {
       const { data } = await taskApi.get('transactions-summary', {
         params: {
-          month,
-          year,
+          month: selectedMonth,
+          year: selectedYear,
         },
       });
       return data;
