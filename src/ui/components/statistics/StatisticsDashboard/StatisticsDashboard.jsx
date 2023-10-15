@@ -39,7 +39,7 @@ const StatisticsDashboard = ({
         ariaLabel={'Select month'}
       />
       <DateSelector
-        options={yearOptions}
+        options={yearOptions.reverse()}
         value={selectedYear}
         onChange={changeYear}
         ariaLabel={'Select year'}
