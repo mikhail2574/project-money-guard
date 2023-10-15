@@ -1,8 +1,4 @@
 import {
-  selectCategories,
-  selectTransactions,
-} from 'redux/transactions/selectors';
-import {
   DeleteButton,
   EditButton,
 } from '../TransactionsItem/TransactionsItemStyles';
@@ -15,7 +11,7 @@ import {
   PropertyHeader,
   PropertyHeaderList,
 } from './DesktopTransactionsListStyles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BiPencil } from 'react-icons/bi';
 import { deleteTransaction } from 'redux/transactions/operations';
 

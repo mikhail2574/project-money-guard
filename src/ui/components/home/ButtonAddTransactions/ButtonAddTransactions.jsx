@@ -1,10 +1,10 @@
 import plus from 'ui/icons/plus.svg';
 import { useMyContext } from 'context/useMyContext';
-import Button from '../shared/Button';
+import Button from 'ui/components/shared/Button';
 import { StyledBtnWrap } from './ButtonAddTransactions.styled';
 
 export const ButtonAddTransactions = () => {
-  const { open, isOpen, setTypeModal } = useMyContext();
+  const { open, setTypeModal } = useMyContext();
 
   const handleOpen = () => {
     open();

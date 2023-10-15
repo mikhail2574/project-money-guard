@@ -17,11 +17,8 @@ import {
   Input,
   InputDiv,
   Label,
-  LogInButtText,
   LogInButton,
   PasswordBar,
-  RegButtonText,
-  RegisterButton,
   SvgDiv,
   SvgEmail,
   SvgPass,
@@ -29,6 +26,7 @@ import {
   Title,
   TitleDiv,
 } from './RegistrationForm.styled';
+import Button from '../shared/Button';
 
 export const RegisterForm = () => {
   // validation
@@ -160,17 +158,13 @@ export const RegisterForm = () => {
           </div>
         </Label>
         <PasswordBar password={myInputValue} />
-        <RegisterButton type="submit" value="Create account">
-          <RegButtonText>Register</RegButtonText>
-        </RegisterButton>
+        <Button type="submit" variant="login">
+          Register
+        </Button>
       </Form>
       <Link to="/">
-        <LogInButton>
-          <LogInButtText>Log-in</LogInButtText>
-        </LogInButton>
+        <LogInButton>Log in</LogInButton>
       </Link>
     </>
   );
 };
-// Rosie Simpson
-// Rosie1@mqw.ua
