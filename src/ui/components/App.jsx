@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { refreshThunk } from 'redux/registration/operation';
 import { selectIsRefresh } from 'redux/registration/selectors';
 import { LoaderSpinner } from './dashboard/Loader/Loader';
+import Layout from './Layout/Layout';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,22 +22,34 @@ export const App = () => {
   }, [dispatch]);
 
   const isLoading = useSelector(selectIsRefresh);
-  console.log(isLoading);
   return !isLoading ? (
     <div>
       <ToastContainer />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<RedirectRoute component={<HomeTab />} />} />
+        <Route
+          path="/"
+          element={
+            <RedirectRoute component={<Layout children={<HomeTab />} />} />
+          }
+        />
         <Route
           path="/home"
-          element={<PrivateRoute redirectTo="/login" component={<HomeTab />} />}
+          element={
+            <PrivateRoute
+              redirectTo="/login"
+              component={<Layout children={<HomeTab />} />}
+            />
+          }
         />
         <Route
           path="/statistics"
           element={
-            <PrivateRoute redirectTo="/login" component={<StatisticsTab />} />
+            <PrivateRoute
+              redirectTo="/login"
+              component={<Layout children={<StatisticsTab />} />}
+            />
           }
         />
         <Route path="*" element={<NotFoundPage />} />

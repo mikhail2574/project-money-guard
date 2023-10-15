@@ -9,7 +9,6 @@ const useAuth = () => {
   const isLoggedIn = useSelector(selectIsLogin);
   const isRefreshing = useSelector(selectIsRefresh);
   const user = useSelector(selectName);
-
   return {
     isLoggedIn,
     isRefreshing,
