@@ -4,7 +4,7 @@ import bgHome from 'ui/images/mainGradient.png';
 export const MainContainer = styled.main`
   width: 100dvw;
   height: 100dvh;
-  background-color: #1e0646;
+  background-color: var(--bg);
   background-image: url(${bgHome});
   background-position: center;
   background-size: cover;
