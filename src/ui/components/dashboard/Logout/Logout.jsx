@@ -10,7 +10,7 @@ import {
   Question,
   ButtonsContainer,
 } from './Logout.styled';
-import Button from 'ui/components/home/shared/Button';
+import Button from 'ui/components/shared/Button';
 import { useMyContext } from 'context/useMyContext';
 
 export const Logout = () => {

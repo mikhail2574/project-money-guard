@@ -4,7 +4,7 @@ import Button from '../shared/Button';
 import { StyledBtnWrap } from './ButtonAddTransactions.styled';
 
 export const ButtonAddTransactions = () => {
-  const { open, isOpen, setTypeModal } = useMyContext();
+  const { open, setTypeModal } = useMyContext();
 
   const handleOpen = () => {
     open();

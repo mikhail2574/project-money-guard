@@ -12,8 +12,13 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { loginThunk } from 'redux/registration/operation';
 import { selectIsLogin } from 'redux/registration/selectors';
 import { toast } from 'react-toastify';
+<<<<<<< Updated upstream
 import { StyledLink } from '../home/shared/Button.styled';
 import Button from '../home/shared/Button';
+=======
+import { StyledLink } from './LoginForm.styled';
+import Button from '../shared/Button';
+>>>>>>> Stashed changes
 import { MdEmail, MdHttps } from 'react-icons/md';
 import logoImg from 'ui/icons/logo.svg';
 
