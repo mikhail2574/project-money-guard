@@ -8,10 +8,6 @@ export const selectCategories = createSelector(
   [state => state.transactions.categories],
   categories => categories
 );
-/* export const selectSummary = createSelector(
-  [state => state.transactions.summary],
-  summary => summary
-); */
 export const selectSummary = state => state.transactions.summary;
 export const selectIsLoading = state => state.transactions.isLoading;
 export const selectError = state => state.transactions.error;
