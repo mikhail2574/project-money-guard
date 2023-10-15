@@ -41,7 +41,7 @@ export const ContentContainer = styled.div`
   justify-content: center;
   position: relative;
 
-  @media screen and (min-width: 426px) {
+  @media screen and (min-width: 768px) {
     width: 533px;
     height: auto;
     padding: 40px 62px;
