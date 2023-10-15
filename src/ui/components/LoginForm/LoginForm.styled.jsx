@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import loginMobile from 'ui/images/login/login-mobile.webp';
 import loginTablet from 'ui/images/login/login-tablet.webp';
@@ -75,38 +74,6 @@ export const StyledForm = styled.form`
     margin-right: 15px;
     font-size: 24px;
     color: rgb(255 255 255 / 0.6);
-  }
-`;
-
-export const StyledLink = styled(NavLink)`
-  width: 280px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin: 10px 15px;
-  margin-bottom: 98px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-
-  background-color: var(--white);
-  color: var(--text-button);
-  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
-  &:hover {
-    transform: scale(1.01);
-    font-weight: 600;
-    box-shadow: 1px 6px 6px 0px var(--transp-20);
-  }
-  @media screen and (min-width: 768px) {
-    width: 300px;
-    margin-bottom: 80px;
   }
 `;
 

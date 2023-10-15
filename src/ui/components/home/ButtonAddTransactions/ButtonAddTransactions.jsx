@@ -1,17 +1,7 @@
 import plus from 'ui/icons/plus.svg';
-import styled from 'styled-components';
-
 import { useMyContext } from 'context/useMyContext';
-
-const StyledDiv = styled.div`
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: var(--gradient);
-  border-radius: 50%;
-`;
+import Button from '../shared/Button';
+import { StyledBtnWrap } from './ButtonAddTransactions.styled';
 
 export const ButtonAddTransactions = () => {
   const { open, isOpen, setTypeModal } = useMyContext();
@@ -21,8 +11,10 @@ export const ButtonAddTransactions = () => {
     setTypeModal('add');
   };
   return (
-    <StyledDiv onClick={handleOpen}>
-      <img src={plus} alt="add" />
-    </StyledDiv>
+    <StyledBtnWrap>
+      <Button onClick={handleOpen} type="submit" variant="add">
+        <img src={plus} alt="add" />
+      </Button>
+    </StyledBtnWrap>
   );
 };
