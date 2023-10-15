@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories, fetchSummary } from 'redux/transactions/operations';
-import { selectCategories, selectSummary } from 'redux/transactions/selectors';
+import { selectTransactionsObj } from 'redux/transactions/selectors';
 import {
   Chart,
   StatisticsDashboard,
@@ -19,8 +19,9 @@ const StatisticsTab = () => {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
 
-  const categories = useSelector(selectCategories);
-  const statSummary = useSelector(selectSummary);
+  // const categories = useSelector(selectCategories);
+  // const statSummary = useSelector(selectSummary);
+  const { categories, summary } = useSelector(selectTransactionsObj);
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -42,7 +43,7 @@ const StatisticsTab = () => {
     <StatSection>
       <h2>Statistics</h2>
       <LeftSideWrapper>
-        <Chart categories={categories} statSummary={statSummary} />
+        <Chart categories={categories} statSummary={summary} />
         <DashboardWrapper>
           <StatisticsDashboard
             selectedYear={selectedYear}
@@ -50,7 +51,7 @@ const StatisticsTab = () => {
             changeYear={onYearChange}
             changeMonth={onMonthChange}
           />
-          <StatisticsTable statSummary={statSummary} />
+          <StatisticsTable statSummary={summary} />
         </DashboardWrapper>
       </LeftSideWrapper>
     </StatSection>
