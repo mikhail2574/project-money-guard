@@ -41,7 +41,6 @@ export const ButtonStyle = styled.button`
   }
   // =============== кнопка orange ==========
   &.login {
-    margin-top: 40px;
     background: linear-gradient(
       135deg,
       rgb(249, 177, 4) 12%,

@@ -3,21 +3,20 @@ import { MdEmail, MdHttps } from 'react-icons/md';
 import PasswordStrengthBar from 'react-password-strength-bar';
 import styled from 'styled-components';
 
-export const EyeDiv = styled.div`
-  width: 24px;
-  height: 24px;
+export const Form = styled.form`
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: absolute;
-  right: 0;
-  color: whitesmoke;
-
-  &&:active {
-    color: purple;
-  }
+  gap: 40px;
 `;
 
+export const Label = styled.label`
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+`;
 export const TitleDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,67 +33,54 @@ export const Title = styled.h1`
 
 export const PasswordBar = styled(PasswordStrengthBar)`
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
+export const EyeDiv = styled.div`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
 
-export const RegisterButton = styled.button`
-  width: 300px;
-  height: 50px;
-  flex-shrink: 0;
-  border-radius: 20px;
-  background: var(
-    --button-gradient,
-    linear-gradient(97deg, #ffc727 -16.42%, #9e40ba 97.04%, #7000ff 150.71%)
-  );
-  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+  &&:active {
+    color: purple;
+  }
 `;
 
 export const LogInButton = styled.button`
-  width: 300px;
-  height: 50px;
+  position: relative;
   flex-shrink: 0;
-  border-radius: 20px;
-  background: #fcfcfc;
-  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
-  position: relative;
-`;
-
-export const RegButtonText = styled.p`
-  color: var(--white);
-  text-align: center;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-`;
-
-export const LogInButtText = styled.p`
-  color: var(--button-text);
-
-  text-align: center;
-  font-family: Poppins;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-`;
-
-export const Form = styled.form`
-  width: 100%;
-  margin-bottom: 20px;
-  position: relative;
+  width: 280px;
+  height: 50px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
-`;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 
-export const Label = styled.label`
-  width: 100%;
-  margin-bottom: 20px;
+  background-color: var(--white);
+  color: var(--text-button);
+  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: scale(1.01);
+    font-weight: 600;
+    box-shadow: 1px 6px 6px 0px var(--transp-20);
+  }
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
 `;
 
 export const Input = styled.input`
