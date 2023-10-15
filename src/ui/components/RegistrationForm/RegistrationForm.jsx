@@ -26,7 +26,7 @@ import {
   Title,
   TitleDiv,
 } from './RegistrationForm.styled';
-import Button from '../home/shared/Button';
+import Button from '../shared/Button';
 
 export const RegisterForm = () => {
   // validation
