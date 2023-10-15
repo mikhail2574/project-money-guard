@@ -1,15 +1,14 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ButtonStyle = styled.button`
   width: 280px;
+  height: 50px;
   border: none;
   border-radius: 20px;
   padding: 5px 10px;
   background-color: blue;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 15px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -20,9 +19,11 @@ export const ButtonStyle = styled.button`
   @media screen and (min-width: 768px) {
     width: 300px;
   }
-
-  &.registration {
-    height: 50px;
+  // =============== кнопка + add transaction ==========
+  &.add {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     background: linear-gradient(
       135deg,
       rgb(249, 177, 4) 12%,
@@ -31,15 +32,15 @@ export const ButtonStyle = styled.button`
     );
     color: var(--white);
     &:hover {
-      height: 50px;
       background-color: var(--white);
       color: var(--text-button);
-      box-shadow: 1px 6px 6px 0px var(--transp-20);
-      transform: scale(1.01);
+      box-shadow: 1px 1px 7px 3px var(--transp-20);
+      width: 45px;
+      height: 45px;
     }
   }
+  // =============== кнопка orange ==========
   &.login {
-    height: 50px;
     margin-top: 40px;
     background: linear-gradient(
       135deg,
@@ -49,65 +50,57 @@ export const ButtonStyle = styled.button`
     );
     color: var(--white);
     &:hover {
-      height: 50px;
       background-color: var(--white);
       color: var(--text-button);
       box-shadow: 1px 6px 6px 0px var(--transp-20);
       transform: scale(1.01);
     }
   }
+  // =============== кнопка white ==========
   &.cancel {
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 20px;
-    padding: 5px 10px;
-    margin: 10px 15px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
     background-color: var(--white);
     color: var(--text-button);
     &:hover {
-      height: 50px;
-      background-color: var(--white);
-      color: var(--text-button);
-      box-shadow: 1px 6px 6px 0px var(--transp-20);
       transform: scale(1.01);
+      font-weight: 600;
+      box-shadow: 1px 6px 6px 0px var(--transp-20);
     }
   }
 `;
-// ========== Біла кнопка для посилання NavLink
-// export const StyledLink = styled(NavLink)`
-//   width: 280px;
-//   height: 50px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: none;
-//   border-radius: 20px;
-//   padding: 5px 10px;
-//   margin: 10px 15px;
-//   font-weight: 400;
-//   font-size: 18px;
-//   line-height: 27px;
-//   text-transform: uppercase;
-//   text-decoration: none;
-//   cursor: pointer;
-//   background-color: #ffffff;
-//   color: #623f8b;
-// box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
-//   &:hover {
-// transform: scale(1.01);
-//     font-weight: 600;
-// box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.2);
-//   }
-//   @media screen and (min-width: 768px) {
-//     width: 300px;
-//   }
-// `;
+// ========== Біла кнопка для посилання NavLink ================
+
+export const StyledLink = styled(NavLink)`
+  width: 280px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 10px 15px;
+  margin-bottom: 98px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+
+  background-color: var(--white);
+  color: var(--text-button);
+  box-shadow: 1px 6px 6px 0px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: scale(1.01);
+    font-weight: 600;
+    box-shadow: 1px 6px 6px 0px var(--transp-20);
+  }
+  @media screen and (min-width: 768px) {
+    width: 300px;
+    margin-bottom: 80px;
+  }
+`;
