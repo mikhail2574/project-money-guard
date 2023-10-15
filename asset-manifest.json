@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-money-guard/static/css/main.5548ce22.css",
-    "main.js": "/project-money-guard/static/js/main.0f051ea2.js",
+    "main.js": "/project-money-guard/static/js/main.a4146240.js",
     "static/media/mainGradient.png": "/project-money-guard/static/media/mainGradient.0d7f1b74420173be3a7a.png",
     "static/media/Poppins-Regular.ttf": "/project-money-guard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-SemiBold.ttf": "/project-money-guard/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
@@ -25,10 +25,10 @@
     "static/media/logout.svg": "/project-money-guard/static/media/logout.b7825dd385e5b1eb4111f1cd6217a322.svg",
     "static/media/plus.svg": "/project-money-guard/static/media/plus.6194a661e88e1e5113d28da2398b6404.svg",
     "main.5548ce22.css.map": "/project-money-guard/static/css/main.5548ce22.css.map",
-    "main.0f051ea2.js.map": "/project-money-guard/static/js/main.0f051ea2.js.map"
+    "main.a4146240.js.map": "/project-money-guard/static/js/main.a4146240.js.map"
   },
   "entrypoints": [
     "static/css/main.5548ce22.css",
-    "static/js/main.0f051ea2.js"
+    "static/js/main.a4146240.js"
   ]
 }
