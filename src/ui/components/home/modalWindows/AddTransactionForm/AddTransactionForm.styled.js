@@ -40,11 +40,12 @@ export const StyledPlusMin = styled.div`
     content: '';
     display: block;
     position: absolute;
+    z-index: -1;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 134, 141, 0.7);
     border-radius: 50px;
-    box-shadow: 0 0 10px rgba(255, 134, 141, 0.7);
+    box-shadow: 1px 5px 10px rgba(255, 134, 141, 0.7);
   }
 `;
 
