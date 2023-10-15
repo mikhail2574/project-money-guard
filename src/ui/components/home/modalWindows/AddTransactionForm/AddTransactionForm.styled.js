@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import Select from 'react-select';
 
 export const StyledWrapper = styled.div`
   display: flex;
@@ -46,6 +49,74 @@ export const StyledPlusMin = styled.div`
     background-color: rgba(255, 134, 141, 0.7);
     border-radius: 50px;
     box-shadow: 1px 5px 10px rgba(255, 134, 141, 0.7);
+  }
+`;
+
+export const CustomSelect = styled(Select)`
+  .my-select__control {
+    border-radius: 0;
+    border: none;
+
+    /* outline: none !important; */
+    background-color: transparent;
+    border-bottom: 1px solid var(--transp-40);
+  }
+
+  /* .my-select__control input {
+    outline: none !important;
+  } */
+
+  .my-select__indicator {
+    transform: ${props => (props.menuIsOpen ? 'rotate(180deg)' : 'none')};
+    display: ${props => (props.menuIsOpen ? 'block' : 'none')};
+  }
+
+  .css-hkrcqo-control {
+    box-shadow: none;
+  }
+`;
+
+export const customSelectStyles = {
+  control: provided => ({
+    ...provided,
+    outline: 'none',
+    color: 'var(--white)',
+  }),
+  indicatorSeparator: () => ({
+    display: 'none',
+  }),
+  indicatorContainer: () => ({
+    display: 'none',
+  }),
+  menu: provided => ({
+    ...provided,
+    background: `linear-gradient(
+    210deg,
+    rgba(83, 61, 186, 1) 0%,
+    rgba(80, 48, 154, 1) 43.14%,
+    rgba(106, 70, 165, 1) 73.27%,
+    rgba(133, 93, 175, 0.9) 120.03%
+  )`,
+  }),
+};
+
+export const StyledPicker = styled(DatePicker)`
+  width: 182px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--transp-40);
+  padding-bottom: 8px;
+  color: var(--white);
+  font-size: 18px;
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    text-align: left;
   }
 `;
 
@@ -104,6 +175,31 @@ export const StyledDiv = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   gap: 30px;
+
+  .react-datepicker__input-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+  }
+
+  .react-datepicker__view-calendar-icon input {
+    padding: 1px 2px 8px 20px;
+  }
+
+  .react-datepicker__input-container .react-datepicker__calendar-icon {
+    position: absolute;
+    bottom: 1px;
+    right: 23px;
+    transform: translateX(50%);
+    width: 24px;
+    height: 24px;
+    fill: var(--purple);
+
+    @media screen and (max-width: 767px) {
+      right: 29px;
+    }
+  }
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
