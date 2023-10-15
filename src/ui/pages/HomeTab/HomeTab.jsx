@@ -8,19 +8,20 @@ import { Modal } from 'ui/components/Modal/Modal';
 import { Logout } from 'ui/components/dashboard/Logout/Logout';
 import { useMyContext } from 'context/useMyContext';
 import { AddTransactionForm } from 'ui/components/home/modalWindows/AddTransactionForm/AddTransactionForm';
+import { MainContainer } from './HomeTab.styled';
 
 export const HomeTab = () => {
   const { isOpen, typeModal } = useMyContext();
   return (
     <>
       <Header />
-      <main>
+      <MainContainer>
         <Navigation />
         <Balance />
         <Currency />
         <TransactionsList />
         <ButtonAddTransactions />
-      </main>
+      </MainContainer>
       {isOpen ? (
         <Modal>
           {typeModal === 'add' ? (
