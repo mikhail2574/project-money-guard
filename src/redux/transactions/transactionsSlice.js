@@ -26,7 +26,7 @@ const slice = createSlice({
         state.transactions = payload;
       })
       .addCase(addTransaction.fulfilled, (state, { payload }) => {
-        state.transactions.unshift(payload);
+        state.transactions.push(payload);
       })
       .addCase(editTransaction.fulfilled, (state, { payload }) => {
         const index = state.transactions.findIndex(
