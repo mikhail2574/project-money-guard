@@ -22,8 +22,8 @@ const StatisticsDashboard = ({
   ];
   const currentYear = new Date().getFullYear();
 
-  const monthOptions = months.map(month => ({
-    value: month,
+  const monthOptions = months.map((month, idx) => ({
+    value: idx + 1,
     label: month,
   }));
   const yearOptions = Array.from({ length: 5 }, (_, idx) => ({
