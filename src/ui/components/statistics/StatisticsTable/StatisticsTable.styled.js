@@ -21,8 +21,9 @@ export const ColorBox = styled.div`
 // ======================
 
 export const Section = styled.section`
-  padding-top: 20px;
   color: var(--white);
+  width: 100%;
+  padding-top: 20px;
   @media screen and (max-width: 767px) {
     padding-bottom: 45px;
   }
@@ -55,8 +56,6 @@ export const StyledTable = styled.table`
 export const Thead = styled.thead`
   border-radius: 8px;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
   line-height: normal;
 
   background-color: rgba(82, 59, 126, 0.6);
@@ -64,12 +63,12 @@ export const Thead = styled.thead`
 `;
 export const Th = styled.th`
   padding: 16px;
+  font-weight: 600;
 `;
 
 export const ThCategory = styled(Th)`
   border-radius: 8px 0 0 8px;
   text-align: left;
-  position: relative;
 `;
 
 export const ThSum = styled(Th)`
@@ -83,8 +82,6 @@ export const Td = styled.td`
 `;
 
 export const TdCategory = styled(Td)`
-  /* text-align: left;
-  position: relative; */
   display: flex;
   align-items: center;
   height: 54px;
