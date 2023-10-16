@@ -64,12 +64,12 @@ export const CustomSelect = styled(Select)`
     border-bottom: 1px solid var(--transp-40);
   }
 
-  .my-select__single-value {
-    color: var(--white);
-  }
-
   .my-select__control:hover {
     border-color: --transp-40;
+  }
+
+  .my-select__single-value {
+    color: var(--white);
   }
 
   .my-select-control--is-focused {
@@ -130,6 +130,10 @@ export const CustomSelect = styled(Select)`
     color: rgba(255, 134, 141, 1);
     background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
+  }
+
+  .my-select__input {
+    color: var(--white) !important;
   }
 `;
 
