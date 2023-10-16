@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { MdDateRange } from 'react-icons/md';
+import { RiCalendar2Fill } from 'react-icons/ri';
 
 import {
   StyledPicker,
   CustomSelect,
-  customSelectStyles,
+  // customSelectStyles,
   StyledPlusMin,
   StyledSpanExpenses,
   StyledSpanIncome,
@@ -77,7 +77,7 @@ export const AddTransactionForm = () => {
               onChange={onChangeCategory}
               classNamePrefix="my-select"
               aria-label={'Select category'}
-              styles={customSelectStyles}
+              // styles={customSelectStyles}
               placeholder=""
               menuIsOpen={isDropdownOpen}
               onMenuOpen={() => setIsDropdownOpen(true)}
@@ -93,11 +93,15 @@ export const AddTransactionForm = () => {
               shouldCloseOnSelect={true}
               selected={selectedDate}
               onChange={date => setSelectedDate(date)}
-              showIcon={MdDateRange}
+              showIcon={false}
             />
-
+            <RiCalendar2Fill
+              className="calendar-icon"
+              style={{
+                width: '24',
+                height: '24',
+              }}
             />
-
           </InputContainer>
           <StyledInput type="text" />
         </StyledDiv>
