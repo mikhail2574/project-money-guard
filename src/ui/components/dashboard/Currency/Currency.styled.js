@@ -10,9 +10,10 @@ export const Wrap = styled.div`
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
-    top: 13px;
-    right: -111%;
+    top: 0;
+    right: 32px;
     width: 336px;
+    height: 214px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -32,21 +33,25 @@ export const StyledTable = styled.table`
 
   @media screen and (min-width: 1280px) {
     width: 480px;
+    margin-bottom: 40px;
   }
 
   th,
   td {
     text-align: center;
     line-height: 1.5;
+    @media screen and (min-width: 1280px) {
+      font-size: 16px;
+    }
   }
 
   th {
     font-weight: 600;
     line-height: 1.5;
-    padding: 12px;
+    padding: 19px;
 
     @media screen and (min-width: 1280px) {
-      padding: 16px;
+      padding: 17px;
     }
   }
 
@@ -134,7 +139,7 @@ export const Ball = styled.span`
   @media screen and (min-width: 1280px) {
     display: inline;
     position: absolute;
-    top: 55px;
+    top: 13px;
     left: 46px;
     color: rgba(255, 134, 141, 1);
     font-size: 12px;
@@ -147,7 +152,7 @@ export const BallEur = styled.span`
   @media screen and (min-width: 1280px) {
     display: inline;
     position: absolute;
-    top: 20px;
+    top: -20px;
     right: 94px;
     color: rgba(255, 134, 141, 1);
     font-size: 12px;
