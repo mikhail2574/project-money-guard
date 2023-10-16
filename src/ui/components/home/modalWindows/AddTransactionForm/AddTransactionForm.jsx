@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RiCalendar2Fill } from 'react-icons/ri';
+import { VscChevronDown } from 'react-icons/vsc';
 
 import {
   StyledPicker,
   CustomSelect,
-  // customSelectStyles,
+  CustomStyles,
   StyledPlusMin,
   StyledSpanExpenses,
   StyledSpanIncome,
@@ -23,15 +24,29 @@ import Button from 'ui/components/shared/Button';
 import { selectCategories } from 'redux/transactions/selectors';
 import { fetchCategories } from 'redux/transactions/operations';
 import { useMyContext } from 'context/useMyContext';
+import { components } from 'react-select';
 
 export const AddTransactionForm = () => {
   const [checked, setChecked] = useState(true);
-  const dispatch = useDispatch();
   const categories = useSelector(selectCategories);
   const [selectCategory, setSelectCategory] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(Date.now);
   const { close } = useMyContext();
+  const dispatch = useDispatch();
+
+  const DropdownIndicator = props => {
+    return (
+      <components.DropdownIndicator {...props}>
+        <VscChevronDown />
+      </components.DropdownIndicator>
+    );
+  };
+
+  const formattedCategories = categories.map(category => ({
+    value: category.id,
+    label: category.name,
+  }));
 
   const handleChange = nextChecked => {
     setChecked(nextChecked);
@@ -72,14 +87,15 @@ export const AddTransactionForm = () => {
         <StyledDiv>
           {checked ? (
             <CustomSelect
-              options={categories}
+              options={formattedCategories}
               value={selectCategory}
               onChange={onChangeCategory}
               classNamePrefix="my-select"
               aria-label={'Select category'}
-              // styles={customSelectStyles}
-              placeholder=""
+              components={{ DropdownIndicator }}
+              placeholder="Select category"
               menuIsOpen={isDropdownOpen}
+              styles={CustomStyles}
               onMenuOpen={() => setIsDropdownOpen(true)}
               onMenuClose={() => setIsDropdownOpen(false)}
             />
@@ -103,7 +119,7 @@ export const AddTransactionForm = () => {
               }}
             />
           </InputContainer>
-          <StyledInput type="text" />
+          <StyledInput placeholder="Comment" type="text" />
         </StyledDiv>
       </StyledForm>
       <ButtonContainer>

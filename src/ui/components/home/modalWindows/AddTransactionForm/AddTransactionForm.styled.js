@@ -56,11 +56,16 @@ export const StyledPlusMin = styled.div`
 export const CustomSelect = styled(Select)`
   .my-select__control {
     border-radius: 0;
+    font-size: 18px;
     border: none;
     box-shadow: none;
     cursor: pointer;
     background-color: transparent;
     border-bottom: 1px solid var(--transp-40);
+  }
+
+  .my-select__single-value {
+    color: var(--white);
   }
 
   .my-select__control:hover {
@@ -79,7 +84,7 @@ export const CustomSelect = styled(Select)`
   .my-select__indicator {
     position: absolute;
     top: 5px;
-    right: 10px;
+    right: 0;
     padding: 0;
     color: var(--white);
 
@@ -104,6 +109,13 @@ export const CustomSelect = styled(Select)`
   }
 
   .my-select__menu-list {
+    color: var(--white);
+    font-size: 16px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
     &::-webkit-scrollbar-thumb {
       background-color: var(--dashboard-text);
     }
@@ -121,6 +133,21 @@ export const CustomSelect = styled(Select)`
   }
 `;
 
+export const CustomStyles = {
+  option: provided => ({
+    ...provided,
+    paddingLeft: '20px',
+  }),
+
+  placeholder: base => ({
+    ...base,
+    color: 'var(--transp-60)',
+    '@media screen and (max-width: 767px)': {
+      paddingLeft: '8px',
+    },
+  }),
+};
+
 export const StyledPicker = styled(DatePicker)`
   width: 182px;
   border: none;
@@ -130,6 +157,7 @@ export const StyledPicker = styled(DatePicker)`
   padding: 1px 2px 8px 20px;
   color: var(--white);
   font-size: 18px;
+  cursor: pointer;
 
   @media screen and (max-width: 767px) {
     width: 280px;
@@ -163,6 +191,7 @@ export const StyledInput = styled.input`
   border-bottom: 1px solid var(--transp-40);
   padding-bottom: 8px;
   padding-left: 20px;
+  cursor: pointer;
   &::placeholder {
     color: var(--transp-60);
   }
