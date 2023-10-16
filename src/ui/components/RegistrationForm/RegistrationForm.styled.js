@@ -25,10 +25,11 @@ export const TitleDiv = styled.div`
 
 export const Title = styled.h1`
   color: var(--white);
-  font-size: 26px;
-  font-style: normal;
+  font-size: 19px;
   font-weight: 400;
-  line-height: normal;
+  @media screen and (min-width: 768px) {
+    font-size: 27px;
+  }
 `;
 
 export const PasswordBar = styled(PasswordStrengthBar)`

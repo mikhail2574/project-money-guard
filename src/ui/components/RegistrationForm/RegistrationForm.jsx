@@ -27,6 +27,7 @@ import {
   TitleDiv,
 } from './RegistrationForm.styled';
 import Button from '../shared/Button';
+import { StyledLogo } from '../LoginForm/LoginForm.styled';
 
 export const RegisterForm = () => {
   // validation
@@ -86,7 +87,7 @@ export const RegisterForm = () => {
     <>
       <Form onSubmit={handleSubmit(submit)}>
         <TitleDiv>
-          <img src={Logotip} alt="logo" width="36px" height="36px" />
+          <StyledLogo src={Logotip} alt="logo" />
           <Title>Money Guard</Title>
         </TitleDiv>
         <Label>

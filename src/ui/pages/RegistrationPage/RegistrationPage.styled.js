@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import bd from 'ui/images/register/register-desktop.webp';
+import bdTabl from 'ui/images/register/register-desktop.webp';
 import bd2 from 'ui/images/register/register-desktop@2x.webp';
+import bd from 'ui/images/login/GradientLogo.png';
 
 export const MainContainer = styled.main`
   display: flex;
@@ -8,6 +9,7 @@ export const MainContainer = styled.main`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: var(--bg);
   background-image: url(${bd});
   background-position: center;
   background-size: cover;
@@ -18,6 +20,9 @@ export const MainContainer = styled.main`
   width: 100%;
   height: 100%;
   z-index: 666;
+  @media screen and (min-width: 768px) {
+    background-image: url(${bdTabl});
+  }
 
   @media only screen and (-webkit-min-device-pixel-ratio: 2),
     /* для Safari,
@@ -38,7 +43,7 @@ export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
 
   @media screen and (min-width: 768px) {
