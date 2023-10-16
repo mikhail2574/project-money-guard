@@ -15,6 +15,7 @@ import {
   TextExit,
 } from './Header.styled';
 import { useMyContext } from 'context/useMyContext';
+import { ExRateChanger } from '../ExRateChanger/ExRateChanger';
 
 export const Header = () => {
   const { open, setTypeModal } = useMyContext();
@@ -39,6 +40,7 @@ export const Header = () => {
           <LogoName>Money Guard</LogoName>
         </Logolink>
         <ExitCont>
+          <ExRateChanger />
           <UserName title="Hello :)">{username}</UserName>
           <ExitBtn id="exit" type="button" onClick={handleOnClick} title="quit">
             <img src={logout} alt="logout" />

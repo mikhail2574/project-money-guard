@@ -11,7 +11,7 @@ import {
 const initialState = {
   transactions: [],
   categories: [],
-  summary: {},
+  summary: 10,
   isLoading: false,
   error: null,
 };

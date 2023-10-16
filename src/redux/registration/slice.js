@@ -10,9 +10,11 @@ const initialState = {
   user: {
     name: '',
     email: '',
+    balance: null,
   },
   token: null,
   isLogin: false,
+  isRefresh: false,
   isError: false,
 };
 
@@ -25,9 +27,10 @@ const slice = createSlice({
         return (state = initialState);
       })
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
-        state.isRefresh = false;
         state.user.name = payload.name;
         state.user.email = payload.email;
+        state.user.balance = payload.balance;
+        state.isRefresh = false;
         state.isLogin = true;
       })
       .addCase(refreshThunk.pending, state => {
@@ -42,6 +45,7 @@ const slice = createSlice({
           state.token = payload.token;
           state.user.name = payload.user.username;
           state.user.email = payload.user.email;
+          state.user.balance = payload.balance;
           state.isLogin = true;
         }
       );
