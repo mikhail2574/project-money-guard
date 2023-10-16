@@ -11,7 +11,6 @@ import {
   Thead,
   TotalExp,
   TotalInc,
-  Transaction,
 } from './StatisticsTable.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLoading } from 'redux/transactions/selectors';
