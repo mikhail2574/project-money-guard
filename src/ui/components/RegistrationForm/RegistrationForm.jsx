@@ -77,8 +77,9 @@ export const RegisterForm = () => {
     dispatch(registerThunk(data));
   };
 
-  // заготовка под Navigation
+  //  Navigation
   const isLogin = useSelector(selectIsLogin);
+
   if (isLogin) {
     return <Navigate to="/home" />;
   }
