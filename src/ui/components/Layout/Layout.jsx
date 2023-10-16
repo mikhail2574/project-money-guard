@@ -11,12 +11,14 @@ const Layout = ({ children }) => {
       <Header />
 
       <MainContainer>
-        <LeftMenu>
-          <Navigation />
-          <Balance />
-          <Currency />
-        </LeftMenu>
-        {children}
+        <div className="container">
+          <LeftMenu>
+            <Navigation />
+            <Balance />
+            <Currency />
+          </LeftMenu>
+          {children}
+        </div>
       </MainContainer>
     </>
   );
