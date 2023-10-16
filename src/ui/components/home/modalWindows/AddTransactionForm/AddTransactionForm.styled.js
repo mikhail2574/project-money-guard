@@ -207,7 +207,7 @@ export const StyledDiv = styled.div`
   display: flex;
   position: relative;
   width: 394px;
-  gap: 24px;
+  gap: 40px;
   flex-direction: column;
   margin-top: 20px;
 
@@ -226,7 +226,6 @@ export const StyledDiv = styled.div`
 
   @media screen and (max-width: 767px) {
     width: 280px;
-    gap: 40px;
   }
 `;
 
