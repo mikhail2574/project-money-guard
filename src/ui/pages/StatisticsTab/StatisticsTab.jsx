@@ -16,11 +16,9 @@ import {
 const StatisticsTab = () => {
   const dispatch = useDispatch();
 
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
 
-  // const categories = useSelector(selectCategories);
-  // const statSummary = useSelector(selectSummary);
   const { categories, summary } = useSelector(selectTransactionsObj);
 
   useEffect(() => {
@@ -28,15 +26,14 @@ const StatisticsTab = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    console.log({ selectedMonth, selectedYear });
-    dispatch(fetchSummary({ selectedMonth, selectedYear }));
-  }, [selectedYear, selectedMonth, dispatch]);
+    dispatch(fetchSummary({ month, year }));
+  }, [year, month, dispatch]);
 
   const onYearChange = val => {
-    setSelectedYear(val.value);
+    setYear(val.value);
   };
   const onMonthChange = val => {
-    setSelectedMonth(val.value);
+    setMonth(val.value);
   };
 
   return (
@@ -46,8 +43,8 @@ const StatisticsTab = () => {
         <Chart categories={categories} statSummary={summary} />
         <DashboardWrapper>
           <StatisticsDashboard
-            selectedYear={selectedYear}
-            selectedMonth={selectedMonth}
+            selectedYear={year}
+            selectedMonth={month}
             changeYear={onYearChange}
             changeMonth={onMonthChange}
           />

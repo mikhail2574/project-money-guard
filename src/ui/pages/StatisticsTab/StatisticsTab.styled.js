@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StatSection = styled.div`
-  /* color: var(--white); */
+  color: var(--white);
   margin-top: 40px;
   width: 320px;
   margin-left: auto;
