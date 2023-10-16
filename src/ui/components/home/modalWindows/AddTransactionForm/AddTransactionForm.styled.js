@@ -9,6 +9,7 @@ export const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 28px 20px;
+
   @media screen and (min-width: 768px) {
     padding: 40px 70px;
   }
@@ -55,48 +56,95 @@ export const StyledPlusMin = styled.div`
 export const CustomSelect = styled(Select)`
   .my-select__control {
     border-radius: 0;
+    font-size: 18px;
     border: none;
-
-    /* outline: none !important; */
+    box-shadow: none;
+    cursor: pointer;
     background-color: transparent;
     border-bottom: 1px solid var(--transp-40);
   }
 
-  /* .my-select__control input {
-    outline: none !important;
-  } */
-
-  .my-select__indicator {
-    transform: ${props => (props.menuIsOpen ? 'rotate(180deg)' : 'none')};
-    display: ${props => (props.menuIsOpen ? 'block' : 'none')};
+  .my-select__single-value {
+    color: var(--white);
   }
 
-  .css-hkrcqo-control {
-    box-shadow: none;
+  .my-select__control:hover {
+    border-color: --transp-40;
+  }
+
+  .my-select-control--is-focused {
+    border: 0;
+    outline: none;
+  }
+
+  .my-select__indicator-separator {
+    display: none;
+  }
+
+  .my-select__indicator {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    padding: 0;
+    color: var(--white);
+
+    transform: ${props => (props.menuIsOpen ? 'rotate(180deg)' : 'none')};
+    display: ${props => (props.menuIsOpen ? 'block' : 'none')};
+
+    & > svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+
+  .my-select__menu {
+    background: linear-gradient(
+      210deg,
+      rgba(83, 61, 186, 1) 0%,
+      rgba(80, 48, 154, 1) 43.14%,
+      rgba(106, 70, 165, 1) 73.27%,
+      rgba(133, 93, 175, 0.9) 120.03%
+    );
+    color: var(--transp-10);
+  }
+
+  .my-select__menu-list {
+    color: var(--white);
+    font-size: 16px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--dashboard-text);
+    }
+  }
+
+  .my-select__option--is-focused {
+    color: rgba(255, 134, 141, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+  .my-select__option--is-selected {
+    color: rgba(255, 134, 141, 1);
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
   }
 `;
 
-export const customSelectStyles = {
-  control: provided => ({
+export const CustomStyles = {
+  option: provided => ({
     ...provided,
-    outline: 'none',
-    color: 'var(--white)',
+    paddingLeft: '20px',
   }),
-  indicatorSeparator: () => ({
-    display: 'none',
-  }),
-  indicatorContainer: () => ({
-    display: 'none',
-  }),
-  menu: provided => ({
-    ...provided,
-    background: `linear-gradient(
-    210deg,
-    rgba(83, 61, 186, 1) 0%,
-    rgba(80, 48, 154, 1) 43.14%,
-    rgba(106, 70, 165, 1) 73.27%,
-    rgba(133, 93, 175, 0.9) 120.03%
-  )`,
+
+  placeholder: base => ({
+    ...base,
+    color: 'var(--transp-60)',
+    '@media screen and (max-width: 767px)': {
+      paddingLeft: '8px',
+    },
   }),
 };
 
@@ -106,9 +154,10 @@ export const StyledPicker = styled(DatePicker)`
   outline: none;
   background-color: transparent;
   border-bottom: 1px solid var(--transp-40);
-  padding-bottom: 8px;
+  padding: 1px 2px 8px 20px;
   color: var(--white);
   font-size: 18px;
+  cursor: pointer;
 
   @media screen and (max-width: 767px) {
     width: 280px;
@@ -142,6 +191,7 @@ export const StyledInput = styled.input`
   border-bottom: 1px solid var(--transp-40);
   padding-bottom: 8px;
   padding-left: 20px;
+  cursor: pointer;
   &::placeholder {
     color: var(--transp-60);
   }
@@ -155,13 +205,20 @@ export const StyledInput = styled.input`
 
 export const StyledDiv = styled.div`
   display: flex;
-  gap: 24px;
+  position: relative;
+  width: 394px;
+  gap: 40px;
   flex-direction: column;
   margin-top: 20px;
 
   & > :last-child {
     text-align: left;
     font-weight: 400;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 52px;
+    }
+
     @media screen and (min-width: 767px) {
       width: 394px;
     }
@@ -174,35 +231,60 @@ export const StyledDiv = styled.div`
 
 export const InputContainer = styled.div`
   display: flex;
+  position: relative;
   gap: 30px;
 
   .react-datepicker__input-container {
-    position: relative;
     display: flex;
     width: 100%;
     flex-direction: row-reverse;
   }
 
-  .react-datepicker__view-calendar-icon input {
-    padding: 1px 2px 8px 20px;
-  }
-
-  .react-datepicker__input-container .react-datepicker__calendar-icon {
+  .react-datepicker {
     position: absolute;
-    bottom: 1px;
-    right: 23px;
-    transform: translateX(50%);
-    width: 24px;
-    height: 24px;
-    fill: var(--purple);
+    top: 0;
+    left: -65px;
 
     @media screen and (max-width: 767px) {
+      top: -10px;
+      left: 10px;
+    }
+  }
+
+  .react-datepicker__month-container {
+    background-color: beige;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle::before {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle::after {
+    @media screen and (max-width: 767px) {
+      top: -1px;
+      left: -16px;
+    }
+  }
+
+  .calendar-icon {
+    position: absolute;
+    color: var(--purple);
+    right: 23px;
+    bottom: 8px;
+
+    @media screen and (max-width: 767px) {
+      top: 67px;
       right: 29px;
     }
   }
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
+    gap: 40px;
   }
 `;
 

@@ -1,47 +1,37 @@
-import { NavLink } from 'react-router-dom';
-import styles from './Navigation.module.css';
-import styled from 'styled-components';
-import { BsHouseDoorFill } from 'react-icons/bs';
-import { PiChartLineFill } from 'react-icons/pi';
-
-const StyledLink = styled(NavLink)`
-  padding-left: 16px;
-  color: #fbfbfb;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-
-  &.active {
-    font-weight: 700;
-  }
-  &.active .icon {
-    color: pink;
-  }
-  & .icon {
-    color: gray;
-    width: 24px;
-    height: 24px;
-    margin-right: 16px;
-  }
-`;
+import { TiHome } from 'react-icons/ti';
+import { FaDollarSign } from 'react-icons/fa';
+import { BiStats } from 'react-icons/bi';
+import { StyledLinkHome, StyledNav, StyledSpan } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
-    <nav>
-      <ul>
+    <StyledNav>
+      <ul className="list">
         <li>
-          <StyledLink to="/home">
-            <BsHouseDoorFill className="icon" />
-            Home
-          </StyledLink>
+          <StyledLinkHome to="/home">
+            <div className="boxIcon">
+              <TiHome className="icon" />
+            </div>
+            <StyledSpan>Home</StyledSpan>
+          </StyledLinkHome>
         </li>
         <li>
-          <StyledLink to="/statistics">
-            <PiChartLineFill className="icon" />
-            Statistics
-          </StyledLink>
+          <StyledLinkHome to="/statistics">
+            <div className="boxIcon">
+              <BiStats className="icon iconRevers" />
+            </div>
+
+            <StyledSpan>Statistics</StyledSpan>
+          </StyledLinkHome>
+        </li>
+        <li>
+          <StyledLinkHome to=" /currency">
+            <div className="boxIconDollar">
+              <FaDollarSign className="icon dollar" />
+            </div>
+          </StyledLinkHome>
         </li>
       </ul>
-    </nav>
+    </StyledNav>
   );
 };
