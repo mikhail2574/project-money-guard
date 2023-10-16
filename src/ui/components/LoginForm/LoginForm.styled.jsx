@@ -1,15 +1,16 @@
 import styled from 'styled-components';
-import loginMobile from 'ui/images/login/login-mobile.webp';
+// import loginMobile from 'ui/images/login/login-mobile.webp';
 import loginTablet from 'ui/images/login/login-tablet.webp';
 import loginDesktop from 'ui/images/login/login-desktop.webp';
+import loginMobile from 'ui/images/login/GradientLogo.png';
 
 export const StyledLoginSection = styled.section`
   width: 100dvw;
   height: 100dvh;
-  background-image: url(${loginMobile});
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #1e0646;
+  background-color: var(--bg);
+  background-image: url(${loginMobile});
   display: block;
   text-align: center;
   align-items: center;

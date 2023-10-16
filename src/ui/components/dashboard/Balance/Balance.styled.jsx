@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-
+export const StyledBalanceWrap = styled.div`
+  padding-bottom: 30px;
+`;
 export const StyledBalanceBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
-
   max-width: 280px;
   height: 80px;
-
   padding-top: 8px;
   padding-left: 32px;
   margin: auto;
-  margin-bottom: 32px;
+
   border-radius: 8px;
   background: rgba(82, 59, 126, 0.6);
 
@@ -20,13 +20,11 @@ export const StyledBalanceBox = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 336px;
     padding-left: 40px;
-    margin-left: 32px;
-    backdrop-filter: blur(50px);
+    margin-left: 0;
   }
   @media screen and (min-width: 1280px) {
     border-radius: 0;
     max-width: 480px;
-    margin-left: 0;
     padding-left: 56px;
   }
 `;

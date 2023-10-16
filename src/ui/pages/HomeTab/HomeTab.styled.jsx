@@ -2,16 +2,26 @@ import styled from 'styled-components';
 import bgHome from 'ui/images/mainGradient.png';
 
 export const MainContainer = styled.main`
-  height: 720px;
+  height: 100vh;
   background-color: var(--bg);
   background-image: url(${bgHome});
-  background-position: center;
+
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
 export const LeftMenu = styled.div`
-  max-width: 480px;
+  position: relative;
+  max-width: 336px;
   height: 100%;
-  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  margin: auto;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 480px;
+    border-right: 2px solid var(--transp-60);
+    filter: drop-shadow(1px 4px 1px rgba(0, 0, 0, 0.25));
+  }
 `;
