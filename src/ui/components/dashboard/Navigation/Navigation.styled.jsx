@@ -70,6 +70,7 @@ export const StyledLinkHome = styled(NavLink)`
   }
   &.active .icon {
     color: var(--white);
+    background-color: var(--purple);
   }
   & .iconRevers {
     transform: scale(-1, 1);
