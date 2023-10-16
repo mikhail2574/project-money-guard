@@ -33,7 +33,7 @@ export const Header = () => {
 
   return (
     <HeaderBg>
-      <HeaderContainer className="container">
+      <HeaderContainer>
         <Logolink onClick={goToHome}>
           <Logo src={logo} alt="logotype" />
           <LogoName>Money Guard</LogoName>
