@@ -6,8 +6,12 @@ export const MainContainer = styled.main`
   height: 100vh;
   background-color: var(--bg);
   background-image: url(${bgHome});
-
   background-size: cover;
+  background-repeat: no-repeat;
+  @media screen and (min-width: 1280px) {
+    max-width: 100% !important;
+    margin-left: 0;
+  }
 `;
 
 export const LeftMenu = styled.div`

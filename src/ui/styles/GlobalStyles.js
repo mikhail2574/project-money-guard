@@ -99,7 +99,8 @@ const GlobalStyles = createGlobalStyle`
  }
 
   @media screen and (min-width:1280px) {
-      max-width: 1280px;
+      max-width: 100%;
+      margin: 0;
       
  }
  
