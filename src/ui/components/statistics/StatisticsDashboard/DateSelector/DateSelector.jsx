@@ -23,7 +23,7 @@ const DateSelector = ({ options, value, onChange, ariaLabel }) => {
   };
 
   return (
-    <div>
+    <>
       <StyledSelector
         options={options}
         defaultValue={defaultValue(options, value)}
@@ -34,7 +34,7 @@ const DateSelector = ({ options, value, onChange, ariaLabel }) => {
         aria-label={ariaLabel}
         classNamePrefix="Select"
       />
-    </div>
+    </>
   );
 };
 

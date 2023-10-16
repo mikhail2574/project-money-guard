@@ -9,8 +9,9 @@ import {
 } from 'ui/components/statistics';
 import {
   DashboardWrapper,
-  LeftSideWrapper,
   StatSection,
+  StatsWrapper,
+  StyledTitle,
 } from './StatisticsTab.styled';
 
 const StatisticsTab = () => {
@@ -38,8 +39,8 @@ const StatisticsTab = () => {
 
   return (
     <StatSection>
-      <h2>Statistics</h2>
-      <LeftSideWrapper>
+      <StyledTitle>Statistics</StyledTitle>
+      <StatsWrapper>
         <Chart categories={categories} statSummary={summary} />
         <DashboardWrapper>
           <StatisticsDashboard
@@ -50,7 +51,7 @@ const StatisticsTab = () => {
           />
           <StatisticsTable statSummary={summary} />
         </DashboardWrapper>
-      </LeftSideWrapper>
+      </StatsWrapper>
     </StatSection>
   );
 };

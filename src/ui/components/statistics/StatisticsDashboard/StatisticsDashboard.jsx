@@ -1,4 +1,5 @@
 import DateSelector from './DateSelector/DateSelector';
+import { SelectWrapper } from './StatisticsDashboard.styled';
 
 const StatisticsDashboard = ({
   changeYear,
@@ -31,7 +32,7 @@ const StatisticsDashboard = ({
     label: String(currentYear - idx),
   }));
   return (
-    <>
+    <SelectWrapper>
       <DateSelector
         options={monthOptions}
         value={selectedMonth}
@@ -44,7 +45,7 @@ const StatisticsDashboard = ({
         onChange={changeYear}
         ariaLabel={'Select year'}
       />
-    </>
+    </SelectWrapper>
   );
 };
 
