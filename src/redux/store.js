@@ -13,20 +13,24 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { modalReducer } from './modal/modalSlice';
+import { exSlice, exSliceReducer } from './exchangeRate/exSlice';
 
 const persistConfig = {
   key: 'userToken',
   version: 1,
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'USD', 'EUR', 'selectedCurrency'],
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
+const persistedReducerEx = persistReducer(persistConfig, exSliceReducer);
+
 export const store = configureStore({
   reducer: {
     auth: persistedReducer,
     transactions: transactionsReducer,
     modal: modalReducer,
+    exRate: persistedReducerEx,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

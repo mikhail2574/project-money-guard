@@ -11,7 +11,6 @@ import {
   Thead,
   TotalExp,
   TotalInc,
-  Transaction,
 } from './StatisticsTable.styled';
 import { useSelector } from 'react-redux';
 import { selectIsLoading } from 'redux/transactions/selectors';
@@ -38,7 +37,7 @@ const StatisticsTable = ({ statSummary }) => {
     !statSummary.categoriesSummary ||
     statSummary.categoriesSummary.length === 0
   ) {
-    return null;
+    return;
   }
   /* const mockCategoriesSummary = [
     { name: 'Income', type: 'INCOME', total: 35500 },

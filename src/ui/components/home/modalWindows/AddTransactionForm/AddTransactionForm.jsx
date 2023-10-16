@@ -66,6 +66,7 @@ export const AddTransactionForm = () => {
       <StyledWrap>
         <StyledSpanIncome checked={checked}>Income</StyledSpanIncome>
         <Switch
+          title="Select your type of transaction"
           className="switch"
           onChange={handleChange}
           checked={checked}
@@ -98,10 +99,15 @@ export const AddTransactionForm = () => {
               styles={CustomStyles}
               onMenuOpen={() => setIsDropdownOpen(true)}
               onMenuClose={() => setIsDropdownOpen(false)}
+              title="Chose your category"
             />
           ) : null}
           <InputContainer>
-            <StyledInput type="text" placeholder="0.00" />
+            <StyledInput
+              title="Enter your amount"
+              type="text"
+              placeholder="0.00"
+            />
             <StyledPicker
               name="date"
               dateFormat="dd.MM.yyyy"
@@ -110,6 +116,7 @@ export const AddTransactionForm = () => {
               selected={selectedDate}
               onChange={date => setSelectedDate(date)}
               showIcon={false}
+              title="Choose the date"
             />
             <RiCalendar2Fill
               className="calendar-icon"
@@ -119,12 +126,18 @@ export const AddTransactionForm = () => {
               }}
             />
           </InputContainer>
-          <StyledInput placeholder="Comment" type="text" />
+          <StyledInput
+            title="You can leave your comment here"
+            placeholder="Comment"
+            type="text"
+          />
         </StyledDiv>
       </StyledForm>
       <ButtonContainer>
-        <Button variant="login">Add</Button>
-        <Button variant="cancel" onClick={close}>
+        <Button title="to add your transaction" variant="login">
+          Add
+        </Button>
+        <Button title="Cancel the operation" variant="cancel" onClick={close}>
           Cancel
         </Button>
       </ButtonContainer>
