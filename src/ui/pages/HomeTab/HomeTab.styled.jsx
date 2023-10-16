@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import bgHome from 'ui/images/mainGradient.png';
 
 export const MainContainer = styled.main`
+  display: flex;
   height: 720px;
   background-color: var(--bg);
   background-image: url(${bgHome});
