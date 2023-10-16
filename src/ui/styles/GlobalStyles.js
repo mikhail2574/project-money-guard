@@ -87,7 +87,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-  padding: 0 15px;
   margin: 0 auto;
   outline: 1px solid red;
   @media screen and (min-width:320px) {
@@ -100,7 +99,10 @@ const GlobalStyles = createGlobalStyle`
 
   @media screen and (min-width:1258px) {
       max-width: 1280px;
-      padding: 0 16px;
+      
+ }
+ @media screen and (min-width:1280px) {
+      padding: 0 ;
  }
 }
 `;

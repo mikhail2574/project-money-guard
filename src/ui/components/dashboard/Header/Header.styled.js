@@ -10,6 +10,15 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 15px;
+  @media screen and (min-width: 768px) {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 `;
 
 export const Logolink = styled.a`

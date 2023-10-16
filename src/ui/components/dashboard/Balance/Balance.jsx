@@ -2,6 +2,7 @@ import {
   StyledBalance,
   StyledBalanceBox,
   StyledBalanceLabel,
+  StyledBalanceWrap,
 } from './Balance.styled';
 import { useSelector } from 'react-redux';
 import { selectName } from 'redux/registration/selectors';
@@ -10,7 +11,7 @@ export const Balance = () => {
   const balance = useSelector(selectName);
 
   return (
-    <div>
+    <StyledBalanceWrap>
       <StyledBalanceBox>
         <StyledBalanceLabel>Your balance</StyledBalanceLabel>
         <StyledBalance>
@@ -19,6 +20,6 @@ export const Balance = () => {
           {balance ? <>{balance.balance}</> : '0'}
         </StyledBalance>
       </StyledBalanceBox>
-    </div>
+    </StyledBalanceWrap>
   );
 };
