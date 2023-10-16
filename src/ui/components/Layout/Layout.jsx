@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <Header />
 
       <MainContainer>
-        <LeftMenu>
+        <LeftMenu className="container">
           <Navigation />
           <Balance />
           <Currency />

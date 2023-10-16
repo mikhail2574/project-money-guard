@@ -12,12 +12,16 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 0 15px;
   @media screen and (min-width: 768px) {
-    padding-left: 32px !important;
-    padding-right: 32px !important;
+    padding-left: 32px;
+    padding-right: 32px;
   }
+
   @media screen and (min-width: 1280px) {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    /* padding-left: 16px !important;
+    padding-right: 16px !important; */
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
   }
 `;
 
