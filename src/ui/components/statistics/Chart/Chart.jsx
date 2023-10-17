@@ -19,6 +19,9 @@ export const DonutContainer = styled.div`
   min-width: 300px;
   height: 300px;
   position: relative;
+  @media (max-width: 767px) {
+    margin-bottom: 32px;
+  }
 `;
 
 const Chart = ({ statSummary }) => {

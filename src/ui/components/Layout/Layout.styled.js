@@ -14,7 +14,7 @@ export const MobileChildren = styled.div`
   gap: 8px;
 `;
 
-export const DescktopChildren = styled.div`
+export const DesktopChildren = styled.div`
   @media screen and (max-width: 1279px) {
     display: none;
   }
