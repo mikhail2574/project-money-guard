@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { colors } from '../StatisticsTable/StatisticsTable';
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
   selectCurrency,
@@ -11,6 +10,8 @@ import {
   selectUSD,
 } from 'redux/exchangeRate/selectors';
 import { selectBalance } from 'redux/registration/selectors';
+import { selectIsLoading } from 'redux/transactions/selectors';
+import { LoaderSpinner } from 'ui/components/dashboard/Loader/Loader';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -20,7 +21,8 @@ export const DonutContainer = styled.div`
   position: relative;
 `;
 
-const Chart = statSummary => {
+const Chart = ({ statSummary }) => {
+  const loading = useSelector(selectIsLoading);
   const [chartData, setChartData] = useState(null);
 
   const currentCurrency = useSelector(selectCurrency);
@@ -29,21 +31,20 @@ const Chart = statSummary => {
   const usd = useSelector(selectUSD);
 
   useEffect(() => {
-    if (statSummary && statSummary.statSummary.categoriesSummary) {
-      const data = {
-        labels: [...colors.map(color => color.name)],
-        datasets: [
-          {
-            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            backgroundColor: colors.map(color => color.color),
-            hoverOffset: 4,
-          },
-        ],
-      };
-      console.log(data);
+    const processData = async () => {
+      if (statSummary && statSummary.categoriesSummary) {
+        const data = {
+          labels: [...colors.map(color => color.name)],
+          datasets: [
+            {
+              data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              backgroundColor: colors.map(color => color.color),
+              hoverOffset: 4,
+            },
+          ],
+        };
 
-      if (statSummary.statSummary.categoriesSummary) {
-        statSummary.statSummary.categoriesSummary.forEach(transaction => {
+        statSummary.categoriesSummary.forEach(transaction => {
           if (transaction.type !== 'EXPENSE') {
             return transaction;
           }
@@ -86,43 +87,47 @@ const Chart = statSummary => {
           }
         });
         setChartData(data);
-      } else {
-        // When we don't have data -> empty donut
-        const emptyData = {
-          labels: ['Empty donut!'],
-          datasets: [
-            {
-              data: [1],
-              backgroundColor: ['gray'],
-            },
-          ],
-        };
-        setChartData(emptyData);
       }
-    }
+    };
+    processData();
   }, [statSummary]);
+
+  const emptyData = {
+    labels: ['Empty donut!'],
+    datasets: [
+      {
+        data: [1],
+        backgroundColor: ['gray'],
+      },
+    ],
+  };
 
   const boxShadow = {
     width: '208px',
     height: '208px',
-    'z-index': '999',
-    'box-shadow': '0px -1px 16px 5px rgba(0,0,0,0.29)',
-    'border-radius': '50%',
+    boxShadow: '0px -1px 16px 5px rgba(0,0,0,0.29)',
+    borderRadius: '50%',
     position: 'absolute',
     top: '46px',
     left: '46px',
-    'font-size': '18px',
-    'padding-top': '95px',
-    'text-align': 'center',
+    fontSize: '18px',
+    paddingTop: '95px',
+    textAlign: 'center',
   };
 
   return (
     <DonutContainer>
-      {chartData && (
+      {console.log(chartData)}
+      {!loading ? (
         <>
           <Doughnut
-            data={chartData}
-            redraw={true}
+            data={
+              chartData &&
+              chartData.datasets[0].data.find(element => element !== 0)
+                ? chartData
+                : emptyData
+            }
+            redraw={false}
             options={{ cutout: '70%', plugins: { legend: { display: false } } }}
           />
           <span></span>
@@ -132,6 +137,8 @@ const Chart = statSummary => {
             {currentCurrency === 'UAH' && <p>₴ {balance}</p>}
           </span>
         </>
+      ) : (
+        <LoaderSpinner />
       )}
     </DonutContainer>
   );
