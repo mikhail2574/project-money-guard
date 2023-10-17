@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-select';
+import { components } from 'react-select';
+import { VscChevronDown } from 'react-icons/vsc';
 
 export const StyledWrapper = styled.div`
   display: flex;
@@ -36,7 +38,7 @@ export const StyledPlusMin = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: #ffffff;
+  color: var(--white);
   font-size: 50px;
   position: relative;
 
@@ -150,6 +152,14 @@ export const CustomStyles = {
       paddingLeft: '8px',
     },
   }),
+};
+
+export const DropdownIndicator = props => {
+  return (
+    <components.DropdownIndicator {...props}>
+      <VscChevronDown />
+    </components.DropdownIndicator>
+  );
 };
 
 export const StyledPicker = styled(DatePicker)`
