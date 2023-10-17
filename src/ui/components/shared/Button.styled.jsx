@@ -21,6 +21,9 @@ export const ButtonStyle = styled.button`
   }
   // =============== кнопка + add transaction ==========
   &.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
     border-radius: 50%;
