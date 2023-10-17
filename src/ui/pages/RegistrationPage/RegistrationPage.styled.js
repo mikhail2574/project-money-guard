@@ -1,7 +1,10 @@
 import styled from 'styled-components';
-import bdTabl from 'ui/images/register/register-desktop.webp';
-import bd2 from 'ui/images/register/register-desktop@2x.webp';
 import bd from 'ui/images/login/GradientLogo.png';
+
+import tabbg from 'ui/images/register/register-tablet.webp';
+import tabbg2x from 'ui/images/register/register-tablet@2x.webp';
+import deskbg from 'ui/images/register/register-desktop.webp';
+import deskbg2x from 'ui/images/register/register-desktop@2x.webp';
 
 export const MainContainer = styled.main`
   display: flex;
@@ -21,17 +24,20 @@ export const MainContainer = styled.main`
   height: 100%;
   z-index: 666;
   @media screen and (min-width: 768px) {
-    background-image: url(${bdTabl});
+    background-image: url(${tabbg});
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background-image: url(${tabbg2x});
+    }
   }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),
-    /* для Safari,
-    Safari IOS */ only screen and (min-resolution: 192dpi),
-    /* для IE 10,
-    IE 11,
-    Opera Mini */ only screen and (min-resolution: 2dppx) {
-    /* для нормальных браузеров */
-    background-image: url(${bd2});
+  @media screen and (min-width: 1280px) {
+    background-image: url(${deskbg});
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background-image: url(${deskbg2x});
+    }
   }
 `;
 

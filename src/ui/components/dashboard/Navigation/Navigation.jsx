@@ -25,7 +25,7 @@ export const Navigation = () => {
           </StyledLinkHome>
         </li>
         <li>
-          <StyledLinkHome to=" /currency">
+          <StyledLinkHome to="/currency">
             <div className="boxIconDollar">
               <FaDollarSign className="icon dollar" />
             </div>
