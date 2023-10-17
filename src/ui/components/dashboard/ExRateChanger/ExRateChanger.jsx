@@ -17,7 +17,6 @@ export const ExRateChanger = () => {
 
   const balance = useSelector(selectBalance);
   const test = useSelector(selectEmail);
-  console.log(test);
   const currentCurrency = useSelector(selectCurrency);
 
   useEffect(() => {

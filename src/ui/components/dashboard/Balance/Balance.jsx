@@ -16,11 +16,11 @@ import { selectBalance } from 'redux/registration/selectors';
 // import { selectName } from 'redux/registration/selectors';
 
 export const Balance = () => {
-  // const balance = useSelector(selectName);
   const currentCurrency = useSelector(selectCurrency);
-  const balance = useSelector(selectBalance);
   const euro = useSelector(selectEUR);
   const usd = useSelector(selectUSD);
+  const balance = useSelector(selectBalance);
+
   return (
     <StyledBalanceWrap>
       <StyledBalanceBox>

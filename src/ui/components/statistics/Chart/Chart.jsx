@@ -27,7 +27,6 @@ const Chart = statSummary => {
           },
         ],
       };
-      console.log(data);
 
       if (statSummary.statSummary.categoriesSummary) {
         statSummary.statSummary.categoriesSummary.forEach(transaction => {
