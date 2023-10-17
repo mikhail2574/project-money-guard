@@ -26,9 +26,9 @@ export const Balance = () => {
       <StyledBalanceBox>
         <StyledBalanceLabel>Your balance</StyledBalanceLabel>
         <StyledBalance>
-          {currentCurrency === 'EUR' && <p>EUR: {euro}</p>}
-          {currentCurrency === 'USD' && <p>USD: {usd}</p>}
-          {currentCurrency === 'UAH' && <p>UAH: {balance}</p>}
+          {currentCurrency === 'EUR' && <p>&#8364; {euro}</p>}
+          {currentCurrency === 'USD' && <p>&#36; {usd}</p>}
+          {currentCurrency === 'UAH' && <p>&#8372; {balance}</p>}
         </StyledBalance>
       </StyledBalanceBox>
     </StyledBalanceWrap>
