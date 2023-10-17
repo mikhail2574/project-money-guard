@@ -1,10 +1,10 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RiCalendar2Fill } from 'react-icons/ri';
-import { VscChevronDown } from 'react-icons/vsc';
 
 import {
   StyledPicker,
+  DropdownIndicator,
   CustomSelect,
   CustomStyles,
   StyledPlusMin,
@@ -45,14 +45,6 @@ export const AddTransactionForm = () => {
     category => category.type === 'INCOME' && category.id
   );
 
-  const DropdownIndicator = props => {
-    return (
-      <components.DropdownIndicator {...props}>
-        <VscChevronDown />
-      </components.DropdownIndicator>
-    );
-  };
-
   const formattedCategories = categories.map(category => ({
     value: category.id,
     label: category.name,
@@ -80,7 +72,6 @@ export const AddTransactionForm = () => {
     form.current.reset();
     close();
   };
-
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);

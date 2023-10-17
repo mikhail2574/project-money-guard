@@ -7,12 +7,13 @@ import { DesktopTransactionsList } from 'ui/components/home/TransactionsList/Des
 import { useMediaQuery } from 'react-responsive';
 import { MobileTransactionsList } from 'ui/components/home/TransactionsList/MobileTransactionsList';
 import { EditTransactionForm } from 'ui/components/home/modalWindows/EditTransactionForm/EditTransactionForm';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   fetchCategories,
   fetchTransactions,
 } from 'redux/transactions/operations';
+import { Balance } from 'ui/components/dashboard/Balance/Balance';
 
 export const HomeTab = () => {
   const { isOpen, typeModal } = useMyContext();
@@ -24,6 +25,20 @@ export const HomeTab = () => {
     query: '(max-width: 767px)',
   });
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const detectedSize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', detectedSize);
+    return () => {
+      window.removeEventListener('resize', detectedSize);
+    };
+  }, []);
+  const isMobileScreen = screenWidth <= 767;
+
   useEffect(() => {
     dispatch(fetchTransactions());
     dispatch(fetchCategories());
@@ -31,6 +46,7 @@ export const HomeTab = () => {
 
   return (
     <>
+      {isMobileScreen ? <Balance /> : null}
       {isMobile && <MobileTransactionsList />}
       {isDesktopOrTablet && <DesktopTransactionsList />}
       <ButtonAddTransactions />
