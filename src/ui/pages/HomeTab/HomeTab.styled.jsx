@@ -9,9 +9,11 @@ export const MainContainer = styled.main`
   background-image: url(${bgHome});
   background-size: cover;
   background-repeat: no-repeat;
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     flex-direction: row;
   }
+
   @media screen and (min-width: 1280px) {
     max-width: 100% !important;
     margin-left: 0;

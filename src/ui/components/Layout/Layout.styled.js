@@ -13,3 +13,9 @@ export const MobileChildren = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
+export const DescktopChildren = styled.div`
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
+`;
