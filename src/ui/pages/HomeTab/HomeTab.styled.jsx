@@ -3,14 +3,19 @@ import bgHome from 'ui/images/mainGradient.png';
 
 export const MainContainer = styled.main`
   display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: var(--bg);
   background-image: url(${bgHome});
   background-size: cover;
   background-repeat: no-repeat;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
   @media screen and (min-width: 1280px) {
     max-width: 100% !important;
     margin-left: 0;
+    flex-direction: row;
   }
 `;
 

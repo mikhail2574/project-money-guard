@@ -14,6 +14,7 @@ import { refreshThunk } from 'redux/registration/operation';
 import { selectIsRefresh } from 'redux/registration/selectors';
 import { LoaderSpinner } from './dashboard/Loader/Loader';
 import Layout from './Layout/Layout';
+import CurrencyTab from 'ui/pages/CurrencyTab/CurrencyTab';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -49,6 +50,15 @@ export const App = () => {
             <PrivateRoute
               redirectTo="/login"
               component={<Layout children={<StatisticsTab />} />}
+            />
+          }
+        />
+        <Route
+          path="/currency"
+          element={
+            <PrivateRoute
+              redirectTo="/login"
+              component={<Layout children={<CurrencyTab />} />}
             />
           }
         />
