@@ -12,9 +12,7 @@ export const PropertyHeaderList = styled.ul`
   padding-right: 10px;
   border-radius: 8px;
   background: rgba(82, 59, 126, 0.6);
-
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(50px);
 `;
 
 export const PropertyHeader = styled.li`
@@ -31,10 +29,13 @@ export const PropertyHeader = styled.li`
 
 export const ItemProperty = styled.li`
   flex: 1;
-  text-wrap: wrap;
+  display: -webkit-box;
+  max-width: 112px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: ${props =>
     props.$sum ? (props.$plus ? '#FFB627' : '#FF868D') : '#fbfbfb'};
-  // color: black;
   width: ${props => props.$width};
   padding-left: ${props => props.$pl || '0px'};
   font-family: 'Poppins';
@@ -58,7 +59,6 @@ export const DesktopTransactionsItem = styled.ul`
   height: 56px;
   padding-left: 20px;
   padding-right: 10px;
-  background-color: black;
 `;
 
 export const HiddenSpan = styled.span`
