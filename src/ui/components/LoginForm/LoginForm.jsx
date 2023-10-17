@@ -1,5 +1,6 @@
 import {
   StyledForm,
+  StyledFormWrap,
   StyledLoginSection,
   StyledLogo,
   StyledTitle,
@@ -38,43 +39,45 @@ const LoginForm = () => {
   }
   return (
     <StyledLoginSection>
-      <StyledForm onSubmit={handleSubmit(submit)}>
-        <StyledTitle>
-          <StyledLogo src={logoImg} alt="logoImg" />
-          <span className="logoText">Money Guard</span>
-        </StyledTitle>
-        <label htmlFor="email" className="boxLogin">
-          <MdEmail className="iconEmail" />
-          <input
-            type="email"
-            name="email"
-            title="Enter an email"
-            placeholder="Email"
-            minLength={3}
-            required
-            {...register('email')}
-          />
-        </label>
+      <StyledFormWrap>
+        <StyledForm onSubmit={handleSubmit(submit)}>
+          <StyledTitle>
+            <StyledLogo src={logoImg} alt="logoImg" />
+            <span className="logoText">Money Guard</span>
+          </StyledTitle>
+          <label htmlFor="email" className="boxLogin">
+            <MdEmail className="iconEmail" />
+            <input
+              type="email"
+              name="email"
+              title="Enter an email"
+              placeholder="Email"
+              minLength={3}
+              required
+              {...register('email')}
+            />
+          </label>
 
-        <label htmlFor="password" className="boxLogin">
-          <MdHttps className="iconPass" />
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter password"
-            title="Enter 6-12 symbols"
-            minLength={6}
-            maxLength={12}
-            required
-            {...register('password')}
-          />
-        </label>
+          <label htmlFor="password" className="boxLogin">
+            <MdHttps className="iconPass" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              title="Enter 6-12 symbols"
+              minLength={6}
+              maxLength={12}
+              required
+              {...register('password')}
+            />
+          </label>
 
-        <Button type="submit" variant="login">
-          Log in
-        </Button>
-        <StyledLink to="/register">register</StyledLink>
-      </StyledForm>
+          <Button type="submit" variant="login">
+            Log in
+          </Button>
+          <StyledLink to="/register">register</StyledLink>
+        </StyledForm>
+      </StyledFormWrap>
     </StyledLoginSection>
   );
 };

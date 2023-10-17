@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-// import loginMobile from 'ui/images/login/login-mobile.webp';
+import loginMobile from 'ui/images/login/GradientLogo.png';
 import loginTablet from 'ui/images/login/login-tablet.webp';
 import loginDesktop from 'ui/images/login/login-desktop.webp';
-import loginMobile from 'ui/images/login/GradientLogo.png';
+import loginTablet2x from 'ui/images/login/login-tablet@2x.webp';
+import loginDesktop2x from 'ui/images/login/login-desktop@2x.webp';
 
 export const StyledLoginSection = styled.section`
   width: 100dvw;
@@ -18,25 +19,42 @@ export const StyledLoginSection = styled.section`
   @media screen and (min-width: 768px) {
     display: flex;
     background-image: url(${loginTablet});
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 1/2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(${loginTablet2x});
+    }
   }
   @media screen and (min-width: 1280px) {
     display: flex;
     background-image: url(${loginDesktop});
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 1/2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(${loginDesktop2x});
+    }
+  }
+`;
+export const StyledFormWrap = styled.div`
+  height: 100%;
+  @media screen and (min-width: 768px) {
+    width: 533px;
+    height: 570px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
   }
 `;
 export const StyledForm = styled.form`
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(50px);
-  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
-  @media screen and (min-width: 768px) {
-    width: 533px;
-    height: 570px;
-  }
 
   .boxLogin {
     display: flex;

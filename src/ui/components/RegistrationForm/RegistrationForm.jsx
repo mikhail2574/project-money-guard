@@ -97,11 +97,7 @@ export const RegisterForm = () => {
               <SvgPerson />
             </SvgDiv>
 
-            <Input
-              {...register('username')}
-              placeholder="Name"
-              autocomplete="off"
-            />
+            <Input {...register('username')} placeholder="Name" />
           </InputDiv>
           <div>
             <Error>{errors?.username && errors.username.message}</Error>
@@ -113,11 +109,7 @@ export const RegisterForm = () => {
               <SvgEmail />
             </SvgDiv>
 
-            <Input
-              {...register('email')}
-              placeholder="E-mail"
-              autocomplete="off"
-            />
+            <Input {...register('email')} placeholder="E-mail" />
           </InputDiv>
           <div>
             <Error>{errors?.email && errors.email.message}</Error>
@@ -133,7 +125,6 @@ export const RegisterForm = () => {
               type={passwordShown ? 'text' : 'password'}
               {...register('password')}
               placeholder="Password"
-              autocomplete="off"
             />
             <EyeDiv>
               <i onClick={togglePasswordVisiblity}>{eye}</i>
@@ -152,7 +143,6 @@ export const RegisterForm = () => {
               type={passwordShown ? 'text' : 'password'}
               {...register('confirmPass', { shouldUnregister: true })}
               placeholder="Confirm password"
-              autocomplete="off"
             />
           </InputDiv>
           <div>
