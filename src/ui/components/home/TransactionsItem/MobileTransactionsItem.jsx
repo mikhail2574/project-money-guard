@@ -16,6 +16,7 @@ export const MobileTransactionsItem = ({
   comment,
   amount,
   handleDelete,
+  handleOpen,
 }) => {
   return (
     <TransactionCard>
@@ -25,11 +26,11 @@ export const MobileTransactionsItem = ({
       </CardItem>
       <CardItem>
         <ItemPropertyHeader>Type</ItemPropertyHeader>
-        <ItemProperty>{type ? '+' : '-'}</ItemProperty>
+        <ItemProperty>{type === 'INCOME' ? '+' : '-'}</ItemProperty>
       </CardItem>
       <CardItem>
         <ItemPropertyHeader>Category</ItemPropertyHeader>
-        <ItemProperty>{category}</ItemProperty>
+        <ItemProperty>{category.name}</ItemProperty>
       </CardItem>
       <CardItem>
         <ItemPropertyHeader>Comment</ItemPropertyHeader>
@@ -37,13 +38,13 @@ export const MobileTransactionsItem = ({
       </CardItem>
       <CardItem>
         <ItemPropertyHeader>Sum</ItemPropertyHeader>
-        <ItemProperty $sum={true} $plus={type}>
+        <ItemProperty $sum={true} $plus={type === 'INCOME'}>
           {amount}
         </ItemProperty>
       </CardItem>
       <CardItem>
         <DeleteButton onClick={handleDelete}>Delete</DeleteButton>
-        <EditButton>
+        <EditButton onClick={handleOpen}>
           <BiPencil size={14} /> <EditText>Edit</EditText>
         </EditButton>
       </CardItem>

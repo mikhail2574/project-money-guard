@@ -6,7 +6,8 @@ export const TransactionCard = styled.ul`
   margin-bottom: 8px;
   border-left: 5px solid #ff868d;
   border-radius: 10px;
-  background-color: black;
+  background: rgba(82, 59, 126, 0.6);
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
 `;
 export const CardItem = styled.li`
   display: flex;

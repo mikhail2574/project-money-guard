@@ -7,7 +7,7 @@ export const fetchTransactions = createAsyncThunk(
   'fetchTransactions',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = taskApi.get('transactions');
+      const { data } = await taskApi.get('transactions');
       return data;
     } catch (err) {
       return rejectWithValue(err.message);

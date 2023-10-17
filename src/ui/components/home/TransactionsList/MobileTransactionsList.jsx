@@ -6,13 +6,21 @@ import {
 import styled from 'styled-components';
 import { MobileTransactionsItem } from '../TransactionsItem/MobileTransactionsItem';
 import { deleteTransaction } from 'redux/transactions/operations';
+import { useMyContext } from 'context/useMyContext';
 
 const List = styled.li``;
 
-export const TransactionsList = () => {
+export const MobileTransactionsList = () => {
   const transactions = useSelector(selectTransactions);
   const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
+  const { open, setTypeModal, setId } = useMyContext();
+
+  const handleOpen = id => {
+    open();
+    setTypeModal('edit');
+    setId(id);
+  };
 
   const handleDelete = id => {
     dispatch(deleteTransaction(id));
@@ -30,6 +38,7 @@ export const TransactionsList = () => {
             comment={item.comment}
             amount={item.amount}
             handleDelete={() => handleDelete(item.id)}
+            handleOpen={() => handleOpen(item.id)}
           />
         );
       })}
