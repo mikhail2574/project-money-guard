@@ -115,6 +115,12 @@ export const Input = styled.input`
     transform: translateY(-100%);
     opacity: 1;
   }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill::first-line {
+    color: var(--transp-60) !important;
+  }
 `;
 
 export const InputDiv = styled.div`
