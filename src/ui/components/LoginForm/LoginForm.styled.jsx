@@ -54,7 +54,7 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--transp-10);
 
   .boxLogin {
     display: flex;
@@ -70,29 +70,36 @@ export const StyledForm = styled.form`
     font-size: 18px;
     line-height: 27px;
     background-color: transparent;
-    border-bottom: 1px solid rgb(255 255 255 / 0.6);
-    color: rgb(255 255 255 / 0.6);
+    border-bottom: 1px solid var(--transp-60);
+    color: var(--transp-60);
     @media screen and (min-width: 768px) {
       width: 409px;
     }
   }
   .boxLogin > input {
-    color: rgb(255 255 255 / 0.6);
+    color: var(--transp-60);
     background-color: transparent;
     border: none;
+    outline: none;
   }
   .boxLogin > input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--transp-60);
+  }
+  .boxLogin > input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill::first-line {
+    color: var(--transp-60) !important;
   }
   .iconEmail {
     margin-right: 15px;
     font-size: 24px;
-    color: rgb(255 255 255 / 0.6);
+    color: var(--transp-60);
   }
   .iconPass {
     margin-right: 15px;
     font-size: 24px;
-    color: rgb(255 255 255 / 0.6);
+    color: var(--transp-60);
   }
 `;
 
