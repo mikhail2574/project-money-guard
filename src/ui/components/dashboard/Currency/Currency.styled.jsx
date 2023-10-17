@@ -10,7 +10,7 @@ export const Wrap = styled.div`
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
-    top: 0;
+    top: 4px;
     right: 32px;
     width: 336px;
     height: 214px;
@@ -18,6 +18,10 @@ export const Wrap = styled.div`
 
   @media screen and (min-width: 1280px) {
     width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: rgba(74, 86, 226, 0.1);
 
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;
@@ -29,11 +33,9 @@ export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
   color: var(--white);
-  background: rgba(74, 86, 226, 0.1);
 
   @media screen and (min-width: 1280px) {
     width: 480px;
-    margin-bottom: 40px;
   }
 
   th,
@@ -120,7 +122,6 @@ export const StyledTable = styled.table`
 
 export const Graph = styled.div`
   position: relative;
-  background: rgba(74, 86, 226, 0.1);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   img {

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 export const StyledBalanceWrap = styled.div`
-  padding-bottom: 30px;
+  @media screen and (min-width: 1279px) {
+    padding-bottom: 30px;
+  }
 `;
 export const StyledBalanceBox = styled.div`
   display: flex;
@@ -21,6 +23,7 @@ export const StyledBalanceBox = styled.div`
   @media screen and (max-width: 767px) {
     width: 280px;
     height: 80px;
+    margin-bottom: 24px;
   }
 
   @media screen and (min-width: 768px) {

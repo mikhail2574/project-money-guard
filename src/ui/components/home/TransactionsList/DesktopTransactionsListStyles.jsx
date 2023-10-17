@@ -2,6 +2,15 @@ import styled from 'styled-components';
 
 export const DesktopTransactionList = styled.ul`
   width: 704px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1279px) {
+    margin-top: 46px;
+    margin-left: 69px;
+  }
 `;
 export const PropertyHeaderList = styled.ul`
   display: flex;

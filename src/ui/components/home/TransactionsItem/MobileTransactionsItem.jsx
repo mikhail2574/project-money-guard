@@ -30,7 +30,7 @@ export const MobileTransactionsItem = ({
       </CardItem>
       <CardItem>
         <ItemPropertyHeader>Category</ItemPropertyHeader>
-        <ItemProperty>{category?.name}</ItemProperty>
+        <ItemProperty>{category.name}</ItemProperty>
       </CardItem>
       <CardItem>
         <ItemPropertyHeader>Comment</ItemPropertyHeader>
