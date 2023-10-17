@@ -23,7 +23,7 @@ export const ExRateChanger = () => {
   useEffect(() => {
     dispatch(setEUR(balance));
     dispatch(setUSD(balance));
-  }, [dispatch]);
+  }, [dispatch, balance]);
 
   const handleCurrency = currency => {
     dispatch(setCurrency(currency));

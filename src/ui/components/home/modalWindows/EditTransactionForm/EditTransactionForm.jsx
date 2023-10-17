@@ -19,7 +19,7 @@ import {
 import Select from 'react-select';
 import ReactDatePicker from 'react-datepicker';
 import { useMyContext } from 'context/useMyContext';
-import { addTransaction } from 'redux/transactions/operations';
+// import { addTransaction } from 'redux/transactions/operations';
 
 export const EditTransactionForm = () => {
   const { id, close } = useMyContext();

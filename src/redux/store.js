@@ -13,7 +13,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { modalReducer } from './modal/modalSlice';
-import { exSlice, exSliceReducer } from './exchangeRate/exSlice';
+import { exSliceReducer } from './exchangeRate/exSlice';
 
 const persistConfig = {
   key: 'userToken',
