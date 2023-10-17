@@ -10,6 +10,8 @@ import {
   MobileContainer,
 } from './Layout.styled';
 
+import { HomeTab } from 'ui/pages/HomeTab/HomeTab';
+
 const Layout = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -23,8 +25,9 @@ const Layout = ({ children }) => {
       window.removeEventListener('resize', detectedSize);
     };
   }, []);
+
   const isMobileView = screenWidth <= 767;
-  const isTabletVeiw = screenWidth <= 1279;
+  const isTabletView = screenWidth <= 1279;
 
   return (
     <>
@@ -41,12 +44,13 @@ const Layout = ({ children }) => {
               <Navigation />
               <Balance />
               <Currency />
-              {isTabletVeiw ? children : null}
+              {isTabletView ? children : null}
             </LeftMenu>
             <DescktopChildren>{children}</DescktopChildren>
           </>
         )}
       </MainContainer>
+      <HomeTab />
     </>
   );
 };
