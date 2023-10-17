@@ -133,6 +133,7 @@ export const AddTransactionForm = () => {
               title="Enter your amount"
               type="number"
               placeholder="0.00"
+              required
               ref={inputAmount}
             />
             <StyledPicker
@@ -158,6 +159,7 @@ export const AddTransactionForm = () => {
             title="You can leave your comment here"
             placeholder="Comment"
             type="text"
+            required
             ref={inputComment}
           />
         </StyledDiv>
