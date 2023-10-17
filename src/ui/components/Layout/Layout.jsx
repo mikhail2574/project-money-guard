@@ -4,19 +4,30 @@ import { MainContainer, LeftMenu } from 'ui/pages/HomeTab/HomeTab.styled';
 import { Navigation } from '../dashboard/Navigation/Navigation';
 import { Balance } from '../dashboard/Balance/Balance';
 import { Currency } from '../dashboard/Currency/Currency';
+import { MobileContainer } from './Layout.styled';
 
 const Layout = ({ children }) => {
+  const isMobile = window.innerWidth <= 767;
+
   return (
     <>
       <Header />
-
       <MainContainer>
-        <LeftMenu className="container">
-          <Navigation />
-          <Balance />
-          <Currency />
-        </LeftMenu>
-        {children}
+        {isMobile ? (
+          <MobileContainer>
+            <Navigation />
+            <div>{children}</div>
+          </MobileContainer>
+        ) : (
+          <>
+            <LeftMenu className="container">
+              <Navigation />
+              <Balance />
+              <Currency />
+            </LeftMenu>
+            {children}
+          </>
+        )}
       </MainContainer>
     </>
   );

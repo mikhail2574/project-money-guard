@@ -34,8 +34,8 @@ export const Modal = ({ children }) => {
           <IoCloseSharp
             style={{
               color: 'white',
-              width: '23',
-              height: '23',
+              width: '28',
+              height: '28',
             }}
           />
         </StyledButton>
