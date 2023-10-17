@@ -12,7 +12,7 @@ const initialState = {
   transactions: [],
   categories: [],
   summary: {},
-  // balance: 0, //? Better to use users/current to get info
+  // currentAmount: 0, //? Better to use users/current to get info
   isLoading: false,
   error: null,
 };
@@ -28,7 +28,6 @@ const slice = createSlice({
       })
       .addCase(addTransaction.fulfilled, (state, { payload }) => {
         state.transactions.push(payload);
-        // state.balance = payload.balanceAfter;
       })
       .addCase(editTransaction.fulfilled, (state, { payload }) => {
         const index = state.transactions.findIndex(

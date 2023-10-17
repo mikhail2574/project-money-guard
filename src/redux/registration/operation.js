@@ -47,6 +47,7 @@ export const loginThunk = createAsyncThunk(
     try {
       const { data } = await taskApi.post('auth/sign-in', credentials);
       setToken(data.token);
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -68,6 +69,23 @@ export const logoutThunk = createAsyncThunk(
 
 export const refreshThunk = createAsyncThunk(
   'auth/refresh',
+  async (_, thunkAPI) => {
+    const savedToken = thunkAPI.getState();
+    const persistedToken = savedToken.auth.token;
+    if (!persistedToken) return thunkAPI.rejectWithValue('Token is not exist');
+
+    try {
+      setToken(persistedToken);
+      const { data } = await taskApi.get('users/current');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getInfo = createAsyncThunk(
+  'auth/refresh/info',
   async (_, thunkAPI) => {
     const savedToken = thunkAPI.getState();
     const persistedToken = savedToken.auth.token;
