@@ -29,19 +29,25 @@ export const StyledLinkHome = styled(NavLink)`
   display: flex;
   align-items: center;
   .boxIcon {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     border-radius: 4px;
     background-color: var(--transp-20);
     @media screen and (min-width: 768px) {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       margin-right: 20px;
     }
   }
   .boxIconDollar {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     border-radius: 4px;
     background-color: var(--transp-20);
     @media screen and (min-width: 768px) {
@@ -51,6 +57,7 @@ export const StyledLinkHome = styled(NavLink)`
 
   &.active {
     font-weight: 700;
+    border-radius: 4px;
     background-color: var(--purple);
     @media screen and (min-width: 768px) {
       background-color: transparent;
@@ -59,27 +66,23 @@ export const StyledLinkHome = styled(NavLink)`
 
   & .icon {
     color: rgba(255, 255, 255, 0.4);
-    width: 37px;
-    height: 37px;
-    padding-left: 2px;
-    @media screen and (min-width: 768px) {
-      width: 20px;
-      height: 20px;
-      padding-left: 0;
-    }
+    width: 100%;
+    height: 100%;
+    padding: 4px;
   }
   &.active .icon {
     color: var(--white);
     background-color: var(--purple);
+    border-radius: 4px;
   }
   & .iconRevers {
     transform: scale(-1, 1);
   }
   & .dollar {
-    width: 34px;
-    height: 34px;
-    padding-top: 5px;
-    padding-left: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+
     @media screen and (min-width: 768px) {
       display: none;
     }
