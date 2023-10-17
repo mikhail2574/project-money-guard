@@ -17,6 +17,12 @@ export const StyledBalanceBox = styled.div`
 
   /* Button shadow */
   box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+    height: 80px;
+  }
+
   @media screen and (min-width: 768px) {
     max-width: 336px;
     padding-left: 40px;
@@ -45,8 +51,9 @@ export const StyledBalance = styled.span`
   font-style: normal;
   font-weight: 700;
   line-height: calc(45 / 30);
-  span {
-    font-weight: 400;
-    margin-right: 4px;
+  p {
+    font-size: 30px;
+    font-weight: 700;
+    padding-right: 72px;
   }
 `;

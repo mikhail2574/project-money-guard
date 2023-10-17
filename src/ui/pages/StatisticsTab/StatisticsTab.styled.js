@@ -4,10 +4,12 @@ export const StatSection = styled.div`
   color: var(--white);
   min-width: 280px;
   max-width: 100%;
+  margin: 0 auto;
   margin: 40px auto 0;
   padding: 0px 20px;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin: 40px auto 0;
     margin: 20px 0 0 0;
     padding: 0 32px;
   }
@@ -18,13 +20,14 @@ export const StatSection = styled.div`
 `;
 
 export const StyledTitle = styled.h2`
+  display: inline-block;
   font-size: 30px;
   font-weight: 400;
   line-height: normal;
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 
   @media screen and (min-width: 768px) {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 `;
 

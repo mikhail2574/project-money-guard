@@ -4,7 +4,11 @@ import { MainContainer, LeftMenu } from 'ui/pages/HomeTab/HomeTab.styled';
 import { Navigation } from '../dashboard/Navigation/Navigation';
 import { Balance } from '../dashboard/Balance/Balance';
 import { Currency } from '../dashboard/Currency/Currency';
-import { MobileChildren, MobileContainer } from './Layout.styled';
+import {
+  DescktopChildren,
+  MobileChildren,
+  MobileContainer,
+} from './Layout.styled';
 
 const Layout = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -20,6 +24,7 @@ const Layout = ({ children }) => {
     };
   }, []);
   const isMobileView = screenWidth <= 767;
+  const isTabletVeiw = screenWidth <= 1279;
 
   return (
     <>
@@ -36,8 +41,9 @@ const Layout = ({ children }) => {
               <Navigation />
               <Balance />
               <Currency />
+              {isTabletVeiw ? children : null}
             </LeftMenu>
-            {children}
+            <DescktopChildren>{children}</DescktopChildren>
           </>
         )}
       </MainContainer>
