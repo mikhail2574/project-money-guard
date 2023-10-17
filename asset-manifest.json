@@ -1,15 +1,19 @@
 {
   "files": {
     "main.css": "/project-money-guard/static/css/main.5548ce22.css",
-    "main.js": "/project-money-guard/static/js/main.436aa06a.js",
+    "main.js": "/project-money-guard/static/js/main.ca6241d0.js",
     "static/media/mainGradient.png": "/project-money-guard/static/media/mainGradient.0d7f1b74420173be3a7a.png",
     "static/media/GradientLogo.png": "/project-money-guard/static/media/GradientLogo.bbabb305d267931c1a7a.png",
     "static/media/Poppins-Regular.ttf": "/project-money-guard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-SemiBold.ttf": "/project-money-guard/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Bold.ttf": "/project-money-guard/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "static/media/register-desktop@2x.webp": "/project-money-guard/static/media/register-desktop@2x.e2dccd71598648f779a3.webp",
+    "static/media/register-tablet@2x.webp": "/project-money-guard/static/media/register-tablet@2x.256d405d3d8a04f33c55.webp",
+    "static/media/login-desktop@2x.webp": "/project-money-guard/static/media/login-desktop@2x.bdffcccfcfd46c2ecfaa.webp",
     "static/media/destop@2x.webp": "/project-money-guard/static/media/destop@2x.ceb3b50c75d42c8e312d.webp",
+    "static/media/login-tablet@2x.webp": "/project-money-guard/static/media/login-tablet@2x.4bcb9f503b4ec2ef6ad5.webp",
     "static/media/register-desktop.webp": "/project-money-guard/static/media/register-desktop.cee3c73c3985f3f83e42.webp",
+    "static/media/register-tablet.webp": "/project-money-guard/static/media/register-tablet.0b9ea44cd9af4e830f3d.webp",
     "static/media/tablet@2x.webp": "/project-money-guard/static/media/tablet@2x.321e7be409f7333818dc.webp",
     "static/media/mobile@2x.webp": "/project-money-guard/static/media/mobile@2x.da5ab60041d04fa98e92.webp",
     "static/media/login-desktop.webp": "/project-money-guard/static/media/login-desktop.ba33ab0dd3bb18e0316a.webp",
@@ -24,10 +28,10 @@
     "static/media/logout.svg": "/project-money-guard/static/media/logout.b7825dd385e5b1eb4111f1cd6217a322.svg",
     "static/media/plus.svg": "/project-money-guard/static/media/plus.6194a661e88e1e5113d28da2398b6404.svg",
     "main.5548ce22.css.map": "/project-money-guard/static/css/main.5548ce22.css.map",
-    "main.436aa06a.js.map": "/project-money-guard/static/js/main.436aa06a.js.map"
+    "main.ca6241d0.js.map": "/project-money-guard/static/js/main.ca6241d0.js.map"
   },
   "entrypoints": [
     "static/css/main.5548ce22.css",
-    "static/js/main.436aa06a.js"
+    "static/js/main.ca6241d0.js"
   ]
 }
