@@ -24,7 +24,6 @@ import Button from 'ui/components/shared/Button';
 import { selectCategories } from 'redux/transactions/selectors';
 import { addTransaction, fetchCategories } from 'redux/transactions/operations';
 import { useMyContext } from 'context/useMyContext';
-import { components } from 'react-select';
 import moment from 'moment/moment';
 
 export const AddTransactionForm = () => {
@@ -124,6 +123,7 @@ export const AddTransactionForm = () => {
               title="Enter your amount"
               type="number"
               placeholder="0.00"
+              required
               ref={inputAmount}
             />
             <StyledPicker
@@ -149,6 +149,7 @@ export const AddTransactionForm = () => {
             title="You can leave your comment here"
             placeholder="Comment"
             type="text"
+            required
             ref={inputComment}
           />
         </StyledDiv>

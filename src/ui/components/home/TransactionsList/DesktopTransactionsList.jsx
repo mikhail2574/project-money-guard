@@ -19,6 +19,7 @@ import {
   selectTransactions,
 } from 'redux/transactions/selectors';
 import { useMyContext } from 'context/useMyContext';
+import { getInfo } from 'redux/registration/operation';
 
 export const DesktopTransactionsList = () => {
   const transactions = useSelector(selectTransactions);
@@ -34,6 +35,7 @@ export const DesktopTransactionsList = () => {
 
   const handleDelete = id => {
     dispatch(deleteTransaction(id));
+    dispatch(getInfo());
   };
 
   return (

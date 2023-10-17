@@ -8,7 +8,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
 `;
 
 export const Label = styled.label`
@@ -114,6 +114,12 @@ export const Input = styled.input`
   &:active::placeholder {
     transform: translateY(-100%);
     opacity: 1;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill::first-line {
+    color: var(--transp-60) !important;
   }
 `;
 

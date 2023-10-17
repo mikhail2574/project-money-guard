@@ -4,16 +4,29 @@ import { Doughnut } from 'react-chartjs-2';
 import { colors } from '../StatisticsTable/StatisticsTable';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import {
+  selectCurrency,
+  selectEUR,
+  selectUSD,
+} from 'redux/exchangeRate/selectors';
+import { selectBalance } from 'redux/registration/selectors';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const DonutContainer = styled.div`
-  min-width: 288px;
-  height: 288px;
+  min-width: 300px;
+  height: 300px;
+  position: relative;
 `;
 
 const Chart = statSummary => {
   const [chartData, setChartData] = useState(null);
+
+  const currentCurrency = useSelector(selectCurrency);
+  const balance = useSelector(selectBalance);
+  const euro = useSelector(selectEUR);
+  const usd = useSelector(selectUSD);
 
   useEffect(() => {
     if (statSummary && statSummary.statSummary.categoriesSummary) {
@@ -27,7 +40,6 @@ const Chart = statSummary => {
           },
         ],
       };
-      console.log(data);
 
       if (statSummary.statSummary.categoriesSummary) {
         statSummary.statSummary.categoriesSummary.forEach(transaction => {
@@ -88,14 +100,37 @@ const Chart = statSummary => {
       }
     }
   }, [statSummary]);
+
+  const boxShadow = {
+    width: '208px',
+    height: '208px',
+    'z-index': '999',
+    'box-shadow': '0px -1px 16px 5px rgba(0,0,0,0.29)',
+    'border-radius': '50%',
+    position: 'absolute',
+    top: '46px',
+    left: '46px',
+    'font-size': '18px',
+    'padding-top': '95px',
+    'text-align': 'center',
+  };
+
   return (
     <DonutContainer>
       {chartData && (
-        <Doughnut
-          data={chartData}
-          redraw={true}
-          options={{ plugins: { legend: { display: false } } }}
-        />
+        <>
+          <Doughnut
+            data={chartData}
+            redraw={true}
+            options={{ cutout: '70%', plugins: { legend: { display: false } } }}
+          />
+          <span></span>
+          <span style={boxShadow}>
+            {currentCurrency === 'EUR' && <p>€ {euro}</p>}
+            {currentCurrency === 'USD' && <p>$ {usd}</p>}
+            {currentCurrency === 'UAH' && <p>₴ {balance}</p>}
+          </span>
+        </>
       )}
     </DonutContainer>
   );

@@ -11,6 +11,7 @@ export const selectCategories = createSelector(
 export const selectSummary = state => state.transactions.summary;
 export const selectIsLoading = state => state.transactions.isLoading;
 export const selectError = state => state.transactions.error;
+export const selectCurrentAmount = state => state.transactions.currentAmount;
 
 //* ========================= generalized selector =========================
 export const selectTransactionsObj = createSelector(
@@ -20,8 +21,9 @@ export const selectTransactionsObj = createSelector(
     selectSummary,
     selectIsLoading,
     selectError,
+    selectCurrentAmount,
   ],
-  (transactions, categories, summary, loading, error) => {
-    return { transactions, categories, summary, loading, error };
+  (transactions, categories, summary, loading, error, currentAmount) => {
+    return { transactions, categories, summary, loading, error, currentAmount };
   }
 );
