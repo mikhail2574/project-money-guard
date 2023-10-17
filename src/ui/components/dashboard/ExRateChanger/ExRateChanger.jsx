@@ -5,7 +5,7 @@ import { VscChevronDown, VscChevronUp } from 'react-icons/vsc';
 import { components } from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrency } from 'redux/exchangeRate/selectors';
-import { selectBalance, selectEmail } from 'redux/registration/selectors';
+import { selectBalance } from 'redux/registration/selectors';
 
 export const ExRateChanger = () => {
   const dispatch = useDispatch();
