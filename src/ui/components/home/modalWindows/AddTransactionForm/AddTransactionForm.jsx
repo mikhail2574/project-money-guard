@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RiCalendar2Fill } from 'react-icons/ri';
 import { VscChevronDown } from 'react-icons/vsc';
@@ -22,9 +22,10 @@ import Switch from 'react-switch';
 
 import Button from 'ui/components/shared/Button';
 import { selectCategories } from 'redux/transactions/selectors';
-import { fetchCategories } from 'redux/transactions/operations';
+import { addTransaction, fetchCategories } from 'redux/transactions/operations';
 import { useMyContext } from 'context/useMyContext';
 import { components } from 'react-select';
+import moment from 'moment/moment';
 
 export const AddTransactionForm = () => {
   const [checked, setChecked] = useState(true);
@@ -34,6 +35,15 @@ export const AddTransactionForm = () => {
   const [selectedDate, setSelectedDate] = useState(Date.now);
   const { close } = useMyContext();
   const dispatch = useDispatch();
+  const selectCat = createRef();
+  const selectDate = createRef();
+  const inputAmount = createRef();
+  const inputComment = createRef();
+  const form = createRef();
+
+  const incomeId = categories.find(
+    category => category.type === 'INCOME' && category.id
+  );
 
   const DropdownIndicator = props => {
     return (
@@ -54,6 +64,21 @@ export const AddTransactionForm = () => {
 
   const onChangeCategory = val => {
     setSelectCategory(val);
+  };
+
+  const onSubmit = () => {
+    const data = {
+      transactionDate: moment(selectedDate).format('YYYY-MM-DD'), //new Date(values.date),
+      type: checked ? 'EXPENSE' : 'INCOME',
+      categoryId: checked ? selectCategory.value : incomeId.id,
+      comment: inputComment.current.value,
+      amount: checked
+        ? Number(-inputAmount.current.value)
+        : Number(inputAmount.current.value),
+    };
+    dispatch(addTransaction(data));
+    form.current.reset();
+    close();
   };
 
   useEffect(() => {
@@ -84,7 +109,7 @@ export const AddTransactionForm = () => {
         />
         <StyledSpanExpenses checked={checked}>Expense</StyledSpanExpenses>
       </StyledWrap>
-      <StyledForm>
+      <StyledForm onSubmit={onSubmit} ref={form}>
         <StyledDiv>
           {checked ? (
             <CustomSelect
@@ -100,13 +125,15 @@ export const AddTransactionForm = () => {
               onMenuOpen={() => setIsDropdownOpen(true)}
               onMenuClose={() => setIsDropdownOpen(false)}
               title="Chose your category"
+              ref={selectCat}
             />
           ) : null}
           <InputContainer>
             <StyledInput
               title="Enter your amount"
-              type="text"
+              type="number"
               placeholder="0.00"
+              ref={inputAmount}
             />
             <StyledPicker
               name="date"
@@ -117,6 +144,7 @@ export const AddTransactionForm = () => {
               onChange={date => setSelectedDate(date)}
               showIcon={false}
               title="Choose the date"
+              ref={selectDate}
             />
             <RiCalendar2Fill
               className="calendar-icon"
@@ -130,11 +158,17 @@ export const AddTransactionForm = () => {
             title="You can leave your comment here"
             placeholder="Comment"
             type="text"
+            ref={inputComment}
           />
         </StyledDiv>
       </StyledForm>
       <ButtonContainer>
-        <Button title="to add your transaction" variant="login">
+        <Button
+          title="to add your transaction"
+          variant="login"
+          type="submit"
+          onClick={onSubmit}
+        >
           Add
         </Button>
         <Button title="Cancel the operation" variant="cancel" onClick={close}>
