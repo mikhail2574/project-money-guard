@@ -10,7 +10,7 @@ const initialState = {
   user: {
     name: '',
     email: '',
-    balance: null,
+    balance: 0,
   },
   token: null,
   isLogin: false,
@@ -29,9 +29,14 @@ const slice = createSlice({
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
         state.user.email = payload.email;
-        state.user.balance = payload.balance;
         state.isRefresh = false;
         state.isLogin = true;
+
+        if (!payload.balance) {
+          state.user.balance = 0;
+        } else {
+          state.user.balance = payload.balance;
+        }
       })
       .addCase(refreshThunk.pending, state => {
         state.isRefresh = true;
@@ -45,8 +50,12 @@ const slice = createSlice({
           state.token = payload.token;
           state.user.name = payload.user.username;
           state.user.email = payload.user.email;
-          state.user.balance = payload.balance;
           state.isLogin = true;
+          if (!payload.balance) {
+            state.user.balance = 0;
+          } else {
+            state.user.balance = payload.balance;
+          }
         }
       );
   },
