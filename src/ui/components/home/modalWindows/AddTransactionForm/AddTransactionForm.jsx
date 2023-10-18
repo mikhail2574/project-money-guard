@@ -59,13 +59,22 @@ export const AddTransactionForm = () => {
   };
 
   const onSubmit = () => {
+    if (!inputComment.current.value) {
+      return toast.error('Pleace, leave operation comment!');
+    }
+    if (!inputAmount.current.value) {
+      return toast.error('Pleace, select your amount!');
+    }
+    if (!selectedDate) {
+      return toast.error('Pleace, select the date of thansaction!');
+    }
 
-    if (!selectCategory?.value) return toast.error('Select category!');
-    if (!inputComment.current.value)
-      return toast.error('Need description (comment)!');
-    if (!inputAmount.current.value)
-      return toast.error('Need description (amount)!');
-    if (!selectedDate) return toast.error('Need description (Date)!');
+    if (checked) {
+      if (!selectCategory?.value) {
+        return toast.error('Pleace, select category for expenses!');
+      }
+    }
+
     const data = {
       transactionDate: moment(selectedDate).format('YYYY-MM-DD'),
       type: checked ? 'EXPENSE' : 'INCOME',
@@ -79,6 +88,7 @@ export const AddTransactionForm = () => {
     form.current.reset();
     close();
   };
+
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);

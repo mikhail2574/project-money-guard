@@ -8,7 +8,10 @@ import { MobileTransactionsItem } from '../TransactionsItem/MobileTransactionsIt
 import { deleteTransaction } from 'redux/transactions/operations';
 import { useMyContext } from 'context/useMyContext';
 
-const List = styled.li``;
+const List = styled.li`
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 export const MobileTransactionsList = () => {
   const transactions = useSelector(selectTransactions);
