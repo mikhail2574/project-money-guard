@@ -13,6 +13,14 @@ export const CustomValSelect = styled(Select)`
     border: none;
     cursor: pointer;
     background-color: transparent;
+
+    @media screen and (max-width: 767px) {
+      margin-right: 10px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-right: 40px;
+    }
   }
 
   .my-cusom-select__control:hover {

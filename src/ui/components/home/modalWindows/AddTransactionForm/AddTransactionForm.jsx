@@ -59,7 +59,7 @@ export const AddTransactionForm = () => {
 
   const onSubmit = () => {
     const data = {
-      transactionDate: moment(selectedDate).format('YYYY-MM-DD'), //new Date(values.date),
+      transactionDate: moment(selectedDate).format('YYYY-MM-DD'),
       type: checked ? 'EXPENSE' : 'INCOME',
       categoryId: checked ? selectCategory.value : incomeId.id,
       comment: inputComment.current.value,

@@ -17,8 +17,6 @@ export const HeaderContainer = styled.header`
   }
 
   @media screen and (min-width: 1280px) {
-    /* padding-left: 16px !important;
-    padding-right: 16px !important; */
     padding-left: 16px;
     padding-right: 16px;
     max-width: 100%;
