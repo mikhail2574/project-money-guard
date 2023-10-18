@@ -4,7 +4,7 @@ import bgHome from 'ui/images/mainGradient.png';
 export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-color: var(--bg);
   background-image: url(${bgHome});
   background-size: cover;
