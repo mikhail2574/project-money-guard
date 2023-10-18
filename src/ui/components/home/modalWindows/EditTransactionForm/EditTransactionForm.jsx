@@ -24,6 +24,7 @@ import {
 import { RiCalendar2Fill } from 'react-icons/ri';
 import { toast } from 'react-toastify';
 import { editTransaction } from 'redux/transactions/operations';
+import { getInfo } from 'redux/registration/operation';
 
 export const EditTransactionForm = () => {
   const dispatch = useDispatch();
@@ -132,10 +133,10 @@ export const EditTransactionForm = () => {
                 item => item.name === transactionCategory
               ).id,
             })
-          )
-            .unwrap()
-            .then(() => close())
-            .catch(error => toast.error(error.message));
+
+          );
+          close();
+          dispatch(getInfo());
         }}
       >
         {({ errors, touched, isValidating }) => (
