@@ -24,7 +24,7 @@ export const App = () => {
 
   const isLoading = useSelector(selectIsRefresh);
   return !isLoading ? (
-    <div>
+    <>
       <ToastContainer />
       <Routes>
         <Route path="/register" element={<Register />} />
@@ -64,7 +64,7 @@ export const App = () => {
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </>
   ) : (
     <LoaderSpinner />
   );

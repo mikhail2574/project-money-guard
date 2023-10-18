@@ -68,6 +68,7 @@ export const DesktopTransactionsItem = styled.ul`
   height: 56px;
   padding-left: 20px;
   padding-right: 10px;
+  border-bottom: 1px solid var(--transp-40);
 `;
 
 export const HiddenSpan = styled.span`
