@@ -1,5 +1,3 @@
-
-import Select from 'react-select';
 import { setCurrency, setEUR, setUSD } from 'redux/exchangeRate/exSlice';
 import { useEffect } from 'react';
 import { VscChevronDown, VscChevronUp } from 'react-icons/vsc';

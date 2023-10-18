@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledBtnWrap = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 5px;
 
