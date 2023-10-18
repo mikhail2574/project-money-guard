@@ -25,6 +25,7 @@ import { selectCategories } from 'redux/transactions/selectors';
 import { addTransaction, fetchCategories } from 'redux/transactions/operations';
 import { useMyContext } from 'context/useMyContext';
 import moment from 'moment/moment';
+import { toast } from 'react-toastify';
 
 export const AddTransactionForm = () => {
   const [checked, setChecked] = useState(true);
@@ -58,6 +59,12 @@ export const AddTransactionForm = () => {
   };
 
   const onSubmit = () => {
+    if (!selectCategory?.value) return toast.error('Select category!');
+    if (!inputComment.current.value)
+      return toast.error('Need description (comment)!');
+    if (!inputAmount.current.value)
+      return toast.error('Need description (amount)!');
+    if (!selectedDate) return toast.error('Need description (Date)!');
     const data = {
       transactionDate: moment(selectedDate).format('YYYY-MM-DD'),
       type: checked ? 'EXPENSE' : 'INCOME',
