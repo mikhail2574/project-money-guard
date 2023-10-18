@@ -37,7 +37,6 @@ export const EditTransactionForm = () => {
   const transactionCategory = categories.find(
     item => item.id === categoryId
   ).name;
-  // dispacth(addTransaction()).unwrap().then(()=> closeModal()).catch((error)=> toast.error(eror.message))
 
   const formatDateBack = date => {
     let day = date.getDate();
@@ -113,6 +112,8 @@ export const EditTransactionForm = () => {
         </StyledSpanExpenses>
       </StyledWrap>
       <Formik
+        validateOnBlur={false}
+        validateOnChange={false}
         initialValues={{
           category: categories.find(item => item.name === transactionCategory),
           date: formattedDate,
@@ -131,8 +132,10 @@ export const EditTransactionForm = () => {
                 item => item.name === transactionCategory
               ).id,
             })
-          );
-          close();
+          )
+            .unwrap()
+            .then(() => close())
+            .catch(error => toast.error(error.message));
         }}
       >
         {({ errors, touched, isValidating }) => (
