@@ -52,8 +52,8 @@ export const DesktopTransactionsList = () => {
       </PropertyHeaderList>
       <div
         style={{
-          overflowY: 'scroll',
-          height: '400px',
+          overflowY: 'auto',
+          maxHeight: '400px',
         }}
       >
         {transactions.length === 0 ? (

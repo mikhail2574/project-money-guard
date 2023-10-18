@@ -150,7 +150,7 @@ export const EditTransactionForm = () => {
                 <StyledInput
                   title="Enter your amount"
                   defaultValue={amount}
-                  type="text"
+                  type="number"
                   placeholder="0.00"
                   name="amount"
                   validate={validateAmount}
