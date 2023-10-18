@@ -59,6 +59,7 @@ export const AddTransactionForm = () => {
   };
 
   const onSubmit = () => {
+
     if (!selectCategory?.value) return toast.error('Select category!');
     if (!inputComment.current.value)
       return toast.error('Need description (comment)!');
@@ -68,7 +69,7 @@ export const AddTransactionForm = () => {
     const data = {
       transactionDate: moment(selectedDate).format('YYYY-MM-DD'),
       type: checked ? 'EXPENSE' : 'INCOME',
-      categoryId: checked ? selectCategory.value : incomeId.id,
+      categoryId: checked ? selectCategory?.value : incomeId.id,
       comment: inputComment.current.value,
       amount: checked
         ? Number(-inputAmount.current.value)

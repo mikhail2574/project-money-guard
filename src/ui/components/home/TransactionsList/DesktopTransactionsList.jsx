@@ -54,10 +54,15 @@ export const DesktopTransactionsList = () => {
         style={{
           overflowY: 'auto',
           maxHeight: '400px',
+          minHeight: '50px',
         }}
       >
         {transactions.length === 0 ? (
-          <div>You don't have any transactions yet</div>
+          <div
+            style={{ color: 'white', textAlign: 'center', marginTop: '20px' }}
+          >
+            You don't have any transactions yet
+          </div>
         ) : (
           transactions.map(item => {
             return (

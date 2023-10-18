@@ -28,21 +28,27 @@ export const MobileTransactionsList = () => {
 
   return (
     <List>
-      {transactions.map(item => {
-        let category = categories.find(cat => cat.id === item.categoryId);
-        return (
-          <MobileTransactionsItem
-            key={item.id}
-            transactionDate={item.transactionDate}
-            type={item.type}
-            category={category || {}}
-            comment={item.comment}
-            amount={item.amount}
-            handleDelete={() => handleDelete(item.id)}
-            handleOpen={() => handleOpen(item.id)}
-          />
-        );
-      })}
+      {transactions.length === 0 ? (
+        <div style={{ color: 'white', textAlign: 'center', marginTop: '20px' }}>
+          You don't have any transactions yet
+        </div>
+      ) : (
+        transactions.map(item => {
+          let category = categories.find(cat => cat.id === item.categoryId);
+          return (
+            <MobileTransactionsItem
+              key={item.id}
+              transactionDate={item.transactionDate}
+              type={item.type}
+              category={category || {}}
+              comment={item.comment}
+              amount={item.amount}
+              handleDelete={() => handleDelete(item.id)}
+              handleOpen={() => handleOpen(item.id)}
+            />
+          );
+        })
+      )}
     </List>
   );
 };
