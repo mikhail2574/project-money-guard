@@ -59,9 +59,13 @@ export const AddTransactionForm = () => {
   };
 
   const onSubmit = () => {
-    if (!selectCategory?.value) {
-      return toast.error('Select');
-    }
+
+    if (!selectCategory?.value) return toast.error('Select category!');
+    if (!inputComment.current.value)
+      return toast.error('Need description (comment)!');
+    if (!inputAmount.current.value)
+      return toast.error('Need description (amount)!');
+    if (!selectedDate) return toast.error('Need description (Date)!');
     const data = {
       transactionDate: moment(selectedDate).format('YYYY-MM-DD'),
       type: checked ? 'EXPENSE' : 'INCOME',
