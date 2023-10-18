@@ -4,6 +4,14 @@ export const HeaderBg = styled.div`
   background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
     0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 65px;
+  }
 `;
 
 export const HeaderContainer = styled.header`
@@ -11,6 +19,15 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
+
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    background: linear-gradient(270deg, #2e1746 3.2%, #2e225f 99.98%);
+  }
   @media screen and (min-width: 768px) {
     padding-left: 32px;
     padding-right: 32px;

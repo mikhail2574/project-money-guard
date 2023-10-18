@@ -57,6 +57,6 @@ export const StyledBalance = styled.span`
   p {
     font-size: 30px;
     font-weight: 700;
-    padding-right: 72px;
+    text-align: left;
   }
 `;
