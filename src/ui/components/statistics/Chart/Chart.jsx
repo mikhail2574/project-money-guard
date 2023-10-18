@@ -22,6 +22,9 @@ export const DonutContainer = styled.div`
   @media (max-width: 767px) {
     margin-bottom: 32px;
   }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    min-width: 336px;
+  }
 `;
 
 const Chart = ({ statSummary }) => {
