@@ -89,7 +89,6 @@ const GlobalStyles = createGlobalStyle`
   .container {
  
   margin: 0 auto;
-  outline: 1px solid red;
   @media screen and (min-width:320px) {
       max-width: 475px;
  }

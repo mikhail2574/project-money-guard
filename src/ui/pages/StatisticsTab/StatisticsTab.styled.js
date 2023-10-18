@@ -15,6 +15,7 @@ export const StatSection = styled.div`
   @media screen and (min-width: 1280px) {
     margin: 32px 0 0 0;
     padding-right: 16px;
+    padding-left: 69px;
   }
 `;
 
