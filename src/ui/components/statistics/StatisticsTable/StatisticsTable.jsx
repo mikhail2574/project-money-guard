@@ -39,14 +39,7 @@ const StatisticsTable = ({ statSummary }) => {
   ) {
     return;
   }
-  /* const mockCategoriesSummary = [
-    { name: 'Income', type: 'INCOME', total: 35500 },
-    { name: 'Education', type: 'EXPENSE', total: -10000 },
-    { name: 'Products', type: 'EXPENSE', total: -2500 },
-    { name: 'Car', type: 'EXPENSE', total: -7500 },
-    { name: 'Self care', type: 'EXPENSE', total: -1200 },
-    { name: 'Leisure', type: 'EXPENSE', total: -800 },
-  ]; */
+
   return (
     <Section>
       {!loading ? (
