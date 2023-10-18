@@ -50,33 +50,46 @@ export const DesktopTransactionsList = () => {
           <HiddenSpan>X</HiddenSpan>
         </PropertyHeader>
       </PropertyHeaderList>
-      {transactions.map(item => {
-        return (
-          <DesktopTransactionsItem key={item.id}>
-            <ItemProperty>{item.transactionDate}</ItemProperty>
-            <ItemProperty>{item.type === 'INCOME' ? '+' : '-'}</ItemProperty>
-            <ItemProperty>
-              {categories.find(cat => cat.id === item.categoryId)?.name}
-            </ItemProperty>
-            <ItemProperty>{item.comment}</ItemProperty>
-            <ItemProperty
-              $sum={true}
-              $plus={item.type === 'INCOME'}
-              $align="end"
-            >
-              {item.amount}
-            </ItemProperty>
-            <ButtonContainer>
-              <EditButton onClick={() => handleOpen(item.id)}>
-                <BiPencil size={14} />
-              </EditButton>
-              <DeleteButton onClick={() => handleDelete(item.id)}>
-                Delete
-              </DeleteButton>
-            </ButtonContainer>
-          </DesktopTransactionsItem>
-        );
-      })}
+      <div
+        style={{
+          overflowY: 'auto',
+          maxHeight: '400px',
+        }}
+      >
+        {transactions.length === 0 ? (
+          <div>You don't have any transactions yet</div>
+        ) : (
+          transactions.map(item => {
+            return (
+              <DesktopTransactionsItem key={item.id}>
+                <ItemProperty>{item.transactionDate}</ItemProperty>
+                <ItemProperty>
+                  {item.type === 'INCOME' ? '+' : '-'}
+                </ItemProperty>
+                <ItemProperty>
+                  {categories.find(cat => cat.id === item.categoryId)?.name}
+                </ItemProperty>
+                <ItemProperty>{item.comment}</ItemProperty>
+                <ItemProperty
+                  $sum={true}
+                  $plus={item.type === 'INCOME'}
+                  $align="end"
+                >
+                  {item.amount.toFixed(2)}
+                </ItemProperty>
+                <ButtonContainer>
+                  <EditButton onClick={() => handleOpen(item.id)}>
+                    <BiPencil size={14} />
+                  </EditButton>
+                  <DeleteButton onClick={() => handleDelete(item.id)}>
+                    Delete
+                  </DeleteButton>
+                </ButtonContainer>
+              </DesktopTransactionsItem>
+            );
+          })
+        )}
+      </div>
     </DesktopTransactionList>
   );
 };

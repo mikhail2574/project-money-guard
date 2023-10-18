@@ -13,9 +13,14 @@ import {
   StatsWrapper,
   StyledTitle,
 } from './StatisticsTab.styled';
+import { useMyContext } from 'context/useMyContext';
+import { Modal } from 'ui/components/Modal/Modal';
+import { Logout } from 'ui/components/dashboard/Logout/Logout';
 
 const StatisticsTab = () => {
   const dispatch = useDispatch();
+
+  const { isOpen, typeModal } = useMyContext();
 
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -52,6 +57,7 @@ const StatisticsTab = () => {
           <StatisticsTable statSummary={summary} />
         </DashboardWrapper>
       </StatsWrapper>
+      {isOpen ? <Modal>{typeModal === 'exit' ? <Logout /> : ''}</Modal> : null}
     </StatSection>
   );
 };
