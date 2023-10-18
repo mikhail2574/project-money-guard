@@ -112,6 +112,8 @@ export const EditTransactionForm = () => {
         </StyledSpanExpenses>
       </StyledWrap>
       <Formik
+        validateOnBlur={false}
+        validateOnChange={false}
         initialValues={{
           category: categories.find(item => item.name === transactionCategory),
           date: formattedDate,
