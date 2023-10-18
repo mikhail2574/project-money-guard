@@ -6,6 +6,7 @@ import { components } from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrency } from 'redux/exchangeRate/selectors';
 import { selectBalance } from 'redux/registration/selectors';
+import { CustomValSelect } from './ExRateChanger.styled';
 
 export const ExRateChanger = () => {
   const dispatch = useDispatch();
@@ -47,7 +48,8 @@ export const ExRateChanger = () => {
   };
   return (
     <>
-      <Select
+      <CustomValSelect
+        classNamePrefix="my-cusom-select"
         options={option}
         defaultValue={defaultValue(option, currentCurrency)}
         placeholder="Select a currency"
