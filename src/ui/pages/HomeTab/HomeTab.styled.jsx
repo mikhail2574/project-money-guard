@@ -4,9 +4,11 @@ import bgHome from 'ui/images/mainGradient.png';
 export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 70px);
   background-color: var(--bg);
   background-image: url(${bgHome});
+  min-height: calc(100vh - 70px);
+  background-attachment: fixed;
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -24,7 +26,7 @@ export const MainContainer = styled.main`
 export const LeftMenu = styled.div`
   position: relative;
   max-width: 336px;
-  height: 100%;
+  min-height: 100%;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     min-width: 768px;
