@@ -5,12 +5,10 @@ import { Navigation } from '../dashboard/Navigation/Navigation';
 import { Balance } from '../dashboard/Balance/Balance';
 import { Currency } from '../dashboard/Currency/Currency';
 import {
-  DescktopChildren,
+  DesktopChildren,
   MobileChildren,
   MobileContainer,
 } from './Layout.styled';
-
-import { HomeTab } from 'ui/pages/HomeTab/HomeTab';
 
 const Layout = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -46,11 +44,10 @@ const Layout = ({ children }) => {
               <Currency />
               {isTabletView ? children : null}
             </LeftMenu>
-            <DescktopChildren>{children}</DescktopChildren>
+            <DesktopChildren>{children}</DesktopChildren>
           </>
         )}
       </MainContainer>
-      <HomeTab />
     </>
   );
 };
