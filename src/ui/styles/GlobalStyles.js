@@ -31,6 +31,14 @@ const GlobalStyles = createGlobalStyle`
   input:-webkit-autofill::first-line {
     transition: background-color 5000s ease-in-out 0s;
   }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+  input[type=number] {
+  -moz-appearance: textfield;
+  }
 
   body {
     margin: 0;
