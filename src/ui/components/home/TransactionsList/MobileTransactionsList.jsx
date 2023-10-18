@@ -29,12 +29,13 @@ export const MobileTransactionsList = () => {
   return (
     <List>
       {transactions.map(item => {
+        let category = categories.find(cat => cat.id === item.categoryId);
         return (
           <MobileTransactionsItem
             key={item.id}
             transactionDate={item.transactionDate}
             type={item.type}
-            category={categories.find(cat => cat.id === item.categoryId)}
+            category={category || {}}
             comment={item.comment}
             amount={item.amount}
             handleDelete={() => handleDelete(item.id)}

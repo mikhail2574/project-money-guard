@@ -1,3 +1,4 @@
+import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
@@ -70,35 +71,55 @@ export const StyledCancel = styled.button`
   }
 `;
 
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const StyledInputContainer = styled.div`
   display: flex;
   gap: 32px;
   align-items: center;
 `;
 
-export const StyledInput = styled.input`
-  width: 100%;
-  flex: 1;
+export const StyledInput = styled(Field)`
   border: none;
-  color: white;
+  outline: none;
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--white);
   background-color: transparent;
   border-bottom: 1px solid var(--transp-40);
   padding-bottom: 8px;
-  margin-bottom: 40px;
+  padding-left: 20px;
+  cursor: pointer;
   &::placeholder {
     color: var(--transp-60);
   }
-  outline: none;
+
+  @media screen and (min-width: 768px) {
+    width: 182px;
+    text-align: center;
+    padding-left: 8px;
+  }
 `;
+
 export const StyledDiv = styled.div`
   max-width: 280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 40px;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  & > button {
+    margin: 0 !important;
+  }
+`;
+
+export const StyledForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
 `;

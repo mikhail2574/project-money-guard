@@ -39,7 +39,7 @@ export const MobileTransactionsItem = ({
       <CardItem>
         <ItemPropertyHeader>Sum</ItemPropertyHeader>
         <ItemProperty $sum={true} $plus={type === 'INCOME'}>
-          {amount}
+          {amount.toFixed(2)}
         </ItemProperty>
       </CardItem>
       <CardItem>

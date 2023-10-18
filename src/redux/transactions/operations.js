@@ -31,7 +31,9 @@ export const editTransaction = createAsyncThunk(
   'editTransaction',
   async (body, { rejectWithValue }) => {
     try {
-      const { data } = await taskApi.patch(`transactions/${body.id}`, body);
+      const { id, type, amount, comment, categoryId, transactionDate } = body;
+      const payload = { type, amount, comment, categoryId, transactionDate };
+      const { data } = await taskApi.patch(`transactions/${id}`, payload);
       return data;
     } catch (err) {
       return rejectWithValue(err.message);
