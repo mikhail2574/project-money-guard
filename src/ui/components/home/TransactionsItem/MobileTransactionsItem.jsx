@@ -19,7 +19,7 @@ export const MobileTransactionsItem = ({
   handleOpen,
 }) => {
   return (
-    <TransactionCard>
+    <TransactionCard $sum={true} $plus={type === 'INCOME'}>
       <CardItem>
         <ItemPropertyHeader>Date</ItemPropertyHeader>
         <ItemProperty>{transactionDate}</ItemProperty>

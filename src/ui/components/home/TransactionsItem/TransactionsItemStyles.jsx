@@ -4,7 +4,9 @@ export const TransactionCard = styled.ul`
   height: 293px;
   width: 280px;
   margin-bottom: 8px;
-  border-left: 5px solid #ff868d;
+  border-left: 5px solid transparent;
+  border-left-color: ${props =>
+    props.$sum ? (props.$plus ? '#FFB627' : '#FF868D') : '#fbfbfb'};
   border-radius: 10px;
   background: rgba(82, 59, 126, 0.6);
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
