@@ -11,6 +11,7 @@ import { useMyContext } from 'context/useMyContext';
 const List = styled.li`
   display: flex;
   flex-direction: column-reverse;
+  padding-bottom: 70px;
 `;
 
 export const MobileTransactionsList = () => {

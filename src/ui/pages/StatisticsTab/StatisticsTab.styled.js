@@ -8,6 +8,10 @@ export const StatSection = styled.div`
   margin: 40px auto 0;
   padding: 0px 20px;
 
+  @media screen and (max-width: 767px) {
+    padding: 0;
+  }
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin: 20px 0 0 0;
     padding: 0;

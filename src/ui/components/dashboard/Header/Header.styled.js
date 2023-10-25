@@ -23,6 +23,7 @@ export const HeaderContainer = styled.header`
   @media screen and (max-width: 767px) {
     margin: 0 auto;
     top: 0;
+    opacity: 0.9;
     width: 100%;
     z-index: 1;
     position: fixed;
